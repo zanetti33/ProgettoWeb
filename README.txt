@@ -1,11 +1,11 @@
 Progetto di Web
 
 Elenco obiettivi:
-pagina html uomo, donna, bambino, carrello
-riorganizzare main (bottoni, ecc..)
+pagine html: prodotti, carrello, admin
+riorganizzare main (bottoni, immagini cliccabili, ecc..)
 gestire account (pagina amministratore)
-css
-jquery prodotti consigliati 
+completare css
+jquery (prodotti consigliati, ricerca prodotti con filtri) 
 database
 php
 notifiche
