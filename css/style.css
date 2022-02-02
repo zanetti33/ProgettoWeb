@@ -1,87 +1,87 @@
 body, h1, ul{
     margin: 0;
     padding: 0;
+    margin-block: 0;
+    padding-inline: 0;
 }
 
 body{
     background-color: #e4e4e4;
 }
 
-body > header{
+body header{
     background-color: rgb(0, 0, 255);
     text-align: center;
     color: #fff; 
     font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
-    padding: 20px 0;
+    padding: 2% 0;
 }
 
-nav{
-    margin: 0 5%;
+header h1 {
+    display: inline-block;
+    vertical-align: top;
+    width: 70%;
 }
 
-nav ul{
+header h1 a:visited, header h1 a:link{
+    text-decoration: none;
+    color: #fff;
+}
+
+header ul {
+    background-color: rgb(0, 0, 255);
+    display: inline-block;
+    text-align: end;
     list-style: none;
 }
 
-nav ul li{
+header li {
     display: inline-block;
-    width: 20%;
-    background-color: rgb(0,0,255);
-    margin-top: 10px;
-    margin-right: 2.5%;
-    text-align: center;
 }
 
-nav ul li a{
-    display: inline-block;
-    width: 100%;
-    height: 100%;
-    color: #fff; 
-    text-decoration: none;
-    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+header img {
+    max-width: 35px;
+    max-height: 35px;
 }
 
-nav ul li a:hover{
-    color: rgb(255,127,0);
-}
-
-main{
-    margin: 20px 5% 0;
-}
-
-main > article{
-    background-color: #fff;
-    border: 1px solid #cacaca;
-    margin-bottom: 20px;
-    padding: 0 5%;
-}
-
-main > article > header > div{
-    height: 200px;
-    text-align: center;
-}
-
-main > article > header > div > img{
+main > section > div > img{
     max-width: 100%;
-    max-height: 100%;
+    max-height: 300px;
 }
 
-main > article > header > h2{
-    color: rgb(0, 0, 255);
+main > section > div{
+    text-align: center;
+}
+
+main > section{
+    background-color: #fff;
+    border: 3px solid #cacaca;
+}
+
+main > section > h2{
+    text-align: center;
     padding: 0 5%;
     font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
 }
 
-main article header h2:hover{
+main > section > h2 > a:visited, main > section > h2 > a:link{
+    text-decoration: none;
+    color: rgb(0, 0, 255);
+}
+
+h2 a:hover, h1 a:hover{
     color: rgb(255,127,0);
 }
 
-aside > section{
-    background-color: #fff;
-    border: 1px solid #cacaca;
-    margin: 20px;
-    padding: 10px 5%;
-    color: rgb(0, 0, 255);
+main section div a {
+    display: inline-block;
+    vertical-align: middle;
+    padding: 5px 10px;
+    background-color: rgb(0, 0, 255);
+    border: none;
+    border-radius: 5px;
+    text-decoration: none;
+    color: white;
     font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
 }
 
@@ -180,76 +180,42 @@ table td{
     text-align: center;
 }
 
-aside{
-    margin: 10px 5% 20px;
-    background-color:#fff;
-    border: 1px solid #cacaca;
-    box-sizing: border-box;
-}
-
-aside > section{
-    padding: 20px 5%;
-}
-
-aside > section > h2{
-    color: rgb(0, 0, 255);
-    font: bold 16px 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
-    margin: 0 0 15px;
-}
-
-aside > section > ul{
-    list-style: none;
-}
-
-aside > section > ul > li{
-    margin-bottom: 10px;
-}
-
-aside > section > ul > li > img{
-    width: 50px;
-    float: left;
-    margin-right: 5px;
-}
-
-aside > section > ul > li > a{
-    font: bold 12px 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
-    text-decoration: none;
-}
-
-aside > section > ul > li > a:visited{
-    color: #000;
-}
-
-aside > section > ul > li > a:hover{
-    color:rgb(255, 127, 0);
-}
-
 @media screen and (min-width:768px){
-    nav{
-        margin: 0 19%;
-    }
-    nav ul li{
-        width: 10%;
+
+    header img {
+        max-width: 45px;
+        max-height: 45px;
     }
 
-    nav ul li:not(:last-child){
-        margin-right: 8%;
-    }
-
-    main, aside{
-        display: inline-block;
-        vertical-align: top;
-    }
-
-    main{
+    header h1 {
         width: 50%;
-        margin: 20px 5% 0 10%;
     }
 
-    aside{
-        width: 25%;
-        margin: 20px 10% 0 0;
+    header h1 a {
+        font-size: larger;
+    }
 
+    header ul {
+        width: 45%;
+    }
+
+    header li {
+        margin-left: 5%;
+    }
+
+    main { 
+        padding: 1%;
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-between;
+    }
+
+    main section img{
+        max-height: 300px;
+    }
+
+    main section{
+        width: 39%;
     }
 
     form ul{
