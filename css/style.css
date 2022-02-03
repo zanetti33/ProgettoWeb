@@ -147,11 +147,11 @@ figcaption{
     color: #fff; 
     font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
     padding: 1% 0;
-    width: 200px;
+    width: 160px;
 }
 
 figure img{
-    height: 250px;
+    height: 200px;
     position: relative;
 }
 
