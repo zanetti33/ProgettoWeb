@@ -166,17 +166,11 @@ table{
     border-collapse: collapse;
 }
 
-table td, table th{
+table{
     border: 1px solid rgb(255, 127, 0);
     padding: 5px;
-}
-
-table th{
-    color: rgb(0, 0, 255);
+    color: white;
     font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
-}
-
-table td{
     text-align: center;
 }
 

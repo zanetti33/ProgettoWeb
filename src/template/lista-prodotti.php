@@ -1,30 +1,4 @@
-<!DOCTYPE html>
-<html lang="it">
-    <head>
-        <meta charset="utf-8" />
-        <title>Kits - Home</title>
-        <style>
-            img{height: 50px;}
-        </style>
-        <link rel="stylesheet" type="text/css" href="css/style.css" />
-    </head>
-    <body>
-        <header>
-            <h1><a href="homepage.html">Kits</a></h1>
-            <ul>
-                <li>
-                    <img src="./img/envelope.png" alt="notifiche">
-                </li>
-                <li>
-                    <img src="./img/cart.png" alt="carrello">
-                </li>
-                <li>
-                    <img src="./img/avatar.png" alt="opzioni">
-                </li>
-            </ul>
-        </header>
-        <main>
-            <form>
+			<form>
                 <ul>
                     <li>
                         <label>
@@ -181,9 +155,3 @@
                 <img src="./img/Maglia-Giallo-04-U-Fronte.jpeg" alt="Maglia-Azzurro-01-D-B-Fronte">
                 <figcaption>Maglia Gialla 04<br/>29.99€</figcaption>
             </figure>
-        </main>
-        <footer>
-            <p>Progetto Tecnologie Web - A.A. 2021/2022, Pedrini Fabio, Zanetti Lorenzo, Zanzi Alessandro</p>
-        </footer>
-    </body>
-</html>
