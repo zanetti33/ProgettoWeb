@@ -18,9 +18,11 @@
 <body>
     <header>
         <h1><a <?php isActive("index.php");?> href="index.php">Kits</a></h1>
-		<ul>
-			<?php require("menu.php") ?>
-        </ul>
+		<nav>
+            <ul>
+                <?php require("menu.php") ?>
+            </ul>
+        </nav>
     </header>
     <main>
     <?php
@@ -30,11 +32,13 @@
 	if(isset($templateParams["consigliati"])): ?>
 		<section>
                 <h2>Prodotti Popolari</h2>
+                <img src="./img/back.png" alt="precedente"/>
                 <div>
-                    <a href="#">prev</a>
                     <img src="./img/Maglia-Azzurro-01-D-B-Fronte.jpeg" alt="maglia azzurra"/>
-                    <a href="#">next</a>
+                    <img src="./img/Maglia-Azzurro-01-D-B-Retro.jpeg" alt="maglia azzurra retro"/>
+                    <img src="./img/Maglia-Bianco-01-U-D-B-Fronte.jpeg" alt="maglia bianca"/>
                 </div>
+                <img src="./img/next.png" alt="prossima"/>
         </section>
     <?php endif ?>
     </main>

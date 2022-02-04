@@ -5,13 +5,17 @@ function funzioneChiamabileOvunque($cond){
 }
 
 function getSuggestedProducts(){
-    return null;
+    return true;
 }
 
 function isActive($pagename){
     if(basename($_SERVER['PHP_SELF'])==$pagename){
         echo " class='active' ";
     }
+}
+
+function isUserLoggedIn(){
+    return !empty($_SESSION['idautore']);
 }
 
 ?>
