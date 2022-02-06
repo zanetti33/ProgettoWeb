@@ -33,8 +33,10 @@ CREATE TABLE Maglia(
 
 CREATE TABLE Account(
     email varchar(50) PRIMARY KEY,
+    nome varchar(50) NOT NULL,
+    cognome varchar(50) NOT NULL,
     password varchar(50) NOT NULL,
-    numeroTelefono varchar(9) NOT NULL,
+    numeroTelefono varchar(10) NOT NULL,
     admin boolean NOT NULL DEFAULT '0'
 );
 

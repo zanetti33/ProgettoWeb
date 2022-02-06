@@ -1,0 +1,32 @@
+/*
+INSERT INTO table (par1, par2, par3) VALUES
+('val1', 'val2', 'val3'),
+('val1', 'val2', 'val3');
+*/
+
+//inserimento di alcuni admin
+INSERT INTO account (email, password, numeroTelefono, admin, nome, cognome) VALUES
+("lorenzo.zanetti5@studio.unibo.it", "admin1234", "4776453772", "1", "Lorenzo", "Zanetti"),
+("alessandro.zanzi2@studio.unibo.it", "admin1234", "4732894837", "1", "Alessandro", "Zanzi"),
+("fabio.pedrini3@studio.unibo.it", "admin1234", "3849384384", "1", "Fabio", "Pedrini");
+
+//inserimento di un paio di clienti
+INSERT INTO account (email, password, numeroTelefono, nome, cognome) VALUES
+("lorenzo.zanetti33@gmail.com", "cliente1234", "4776853772", "Lorenzo", "Zanetti"),
+("pinco.pallino@gmail.com", "cliente1234", "4732294837", "Pinco", "Pallino");
+
+//inserimento colori e generi
+INSERT INTO colore (nome) VALUES
+("Azzurro"),
+("Bianco"),
+("Blu"),
+("Giallo"),
+("Nero"),
+("Rosa"),
+("Rosso"),
+("Viola");
+
+INSERT INTO genere (nome) VALUES
+("Uomo"),
+("Donna"),
+("Bambino");

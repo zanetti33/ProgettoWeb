@@ -5,17 +5,11 @@
                         <th id="autore">Autore</th>
                         <th id="email">Email</th>
                     </tr>
-                    <tr>
-                        <th id="fabiopedrini">Fabio Pedrini</th>
-                        <td headers="fabiopedrini email">fabio.pedrini@studio.unibo.it</td>
-                    </tr>
-                    <tr>
-                        <th id="lorenzozanetti">Lorenzo Zanetti</th>
-                        <td headers="lorenzozanetti email">lorenzo.zanetti@studio.unibo.it</td>
-                    </tr>
-                    <tr>
-                        <th id="alessandrozanzi">Alessandro Zanzi</th>
-                        <td headers="alessandrozanzi email">alessandro.zanzi2@studio.unibo.it</td>
-                    </tr>
+                    <?php foreach($templateParams["admin"] as $admin): ?>
+                        <tr>
+                            <th id="<?php echo toTag($admin["nome"]), toTag($admin["cognome"]); ?>"><?php echo $admin["nome"], " ", $admin["cognome"]; ?></th>
+                            <td headers="<?php echo toTag($admin["nome"]), toTag($admin["cognome"]); ?> email"><?php echo $admin["email"]; ?></td>
+                        </tr>
+                    <?php endforeach; ?>
                 </table>
             </section>
