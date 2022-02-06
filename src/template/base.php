@@ -46,6 +46,7 @@
 		<?php require("contatti.php") ?>
         <section>
             <h2>Info</h2>
+            <p>Telefono: 3773893029</p>
             <p>Sede: Via Pinco Pallino 1</p>
         </section>
         <p>Progetto Tecnologie Web - A.A. 2021/2022, Pedrini Fabio, Zanetti Lorenzo, Zanzi Alessandro</p>

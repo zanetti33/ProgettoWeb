@@ -171,9 +171,12 @@ table{
 table{
     border: 1px solid rgb(255, 127, 0);
     padding: 5px;
-    color: white;
     font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
     text-align: center;
+}
+
+footer table {
+    color: white;
 }
 
 @media screen and (min-width:768px){
