@@ -2,8 +2,8 @@
                 <h2>Login</h2>
                 <ul>
                     <li>
-                        <label for="username">Username:</label>
-                        <input type="text" id="username" name="username" />
+                        <label for="email">Email:</label>
+                        <input type="text" id="email" name="email" />
                     </li>
                     <li>
                         <label for="password">Password:</label>
@@ -13,4 +13,7 @@
                         <input type="submit" name="submit" value="Invia" />
                     </li>
                 </ul>
-           </form>
+            </form>
+            <?php if(isset($templateParams["errore"])): ?>
+                <p><?php echo $templateParams["errore"]; ?></p>
+            <?php endif; ?>

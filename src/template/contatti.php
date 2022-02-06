@@ -5,7 +5,7 @@
                         <th id="autore">Autore</th>
                         <th id="email">Email</th>
                     </tr>
-                    <?php foreach($templateParams["admin"] as $admin): ?>
+                    <?php foreach($dbh->getAdmins() as $admin): ?>
                         <tr>
                             <th id="<?php echo toTag($admin["nome"]), toTag($admin["cognome"]); ?>"><?php echo $admin["nome"], " ", $admin["cognome"]; ?></th>
                             <td headers="<?php echo toTag($admin["nome"]), toTag($admin["cognome"]); ?> email"><?php echo $admin["email"]; ?></td>

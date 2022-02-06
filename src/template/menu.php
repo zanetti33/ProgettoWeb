@@ -1,9 +1,12 @@
+                <?php if(isset($_SESSION["admin"]) && (!$_SESSION["admin"])): ?>
                 <li>
-                    <img src="./img/envelope.png" alt="notifiche">
+                    <a href="carrello.php">
+                        <img src="./img/cart.png" alt="carrello">
+                    </a>
                 </li>
+                <?php endif; ?>
                 <li>
-                    <img src="./img/cart.png" alt="carrello">
-                </li>
-                <li>
-                    <img src="./img/avatar.png" alt="opzioni">
+                    <a href="login.php">
+                        <img src="./img/avatar.png" alt="opzioni">
+                    </a>
                 </li>

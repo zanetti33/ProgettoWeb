@@ -14,10 +14,6 @@ function isActive($pagename){
     }
 }
 
-function isUserLoggedIn(){
-    return !empty($_SESSION['idautore']);
-}
-
 function toTag($word){
     return preg_replace("/[^a-z]/", '', strtolower($word));
 }
