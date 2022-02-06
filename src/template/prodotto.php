@@ -5,17 +5,18 @@
                 <form>
                     <ul>
                         <li>
-                            <label>Taglia
-                                <select name="taglia">
+                            <label>Taglia</label>
+                            <select name="taglia">
                                     <option value="xs">XS</option>
                                     <option value="s">S</option>
                                     <option value="m">M</option>
                                     <option value="l">L</option>
                                     <option value="xl">XL</option>
-                                </select>
-                                </label>
-                            <label>Quantità<input type="number" name="quantità" min="1"/>
-                            </label>
+                            </select>
+                        </li>
+                        <li>
+                            <label>Quantità</label>
+                            <input type="number" name="quantità" min="1"/>
                         </li>
                         <li>
                             <input type="submit" value="Aggiungi al carrello"/>

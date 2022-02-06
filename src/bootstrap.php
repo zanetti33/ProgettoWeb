@@ -2,6 +2,6 @@
 session_start();
 define("UPLOAD_DIR", "img/");
 require_once("utils/functions.php");
-//require_once("db/database.php");
-//$dbh = new DatabaseHelper("localhost", "root", "", "nomeDB", 3306);
+require_once("db/database.php");
+$dbh = new DatabaseHelper("localhost", "root", "", "inserirenomedeldatabase", 3306);
 ?>
