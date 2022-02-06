@@ -6,6 +6,10 @@
     <title><?php echo $templateParams["titolo"]; ?></title>
     <link rel="stylesheet" type="text/css" href="./css/style.css" />
     <?php
+    if(isset($templateParams["nome"]) && $templateParams["nome"] == "lista-prodotti.php"): ?>
+		<link rel="stylesheet" type="text/css" href="./css/list-style.css" />
+    <?php endif; ?>
+    <?php
     if(isset($templateParams["js"])):
         foreach($templateParams["js"] as $script):
     ?>
@@ -24,12 +28,17 @@
             </ul>
         </nav>
     </header>
+    <?php
+    if(isset($templateParams["nome"]) && $templateParams["nome"] == "lista-prodotti.php"){
+        require("filtro.php");
+    }
+    ?>
     <main>
     <?php
     if(isset($templateParams["nome"])){
         require($templateParams["nome"]);
     }
-	if(isset($templateParams["consigliati"])): ?>
+	if(isset($templateParams["nome"]) && $templateParams["nome"] == "home.php"): ?>
 		<section>
                 <h2>Prodotti Popolari</h2>
                 <img src="./img/back.png" alt="precedente"/>

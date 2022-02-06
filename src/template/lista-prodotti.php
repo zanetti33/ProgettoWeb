@@ -1,49 +1,27 @@
-			<form>
-                <ul>
-                    <li>
-                        <label>
-                            <input type="checkbox" name="genere" value="U"/>
-                            Uomo</label><br/>
-                        <label>
-                            <input type="checkbox" name="genere" value="D"/>
-                            Donna</label><br/>
-                        <label>
-                            <input type="checkbox" name="genere" value="B"/>
-                            Bambino</label><br/><br/>
-                        <label>Colore
-                        <select name="colore">
-                            <option value="Azzurro">Azzurro</option>
-                            <option value="Bianco">Bianco</option>
-                            <option value="Blu">Blu</option>
-                            <option value="Giallo">Giallo</option>
-                            <option value="Nero">Nero</option>
-                            <option value="Rosa">Rosa</option>
-                            <option value="Rosso">Rosso</option>
-                            <option value="Viola">Viola</option>
-                        </select>
-                        </label>
-                    </li>
-                    <li>
-                        <input type="submit" value="Filtra"/>
-                    </li>
-                </ul>
-            </form>
+		<div>
             <figure>
                 <img src="./img/Maglia-Azzurro-01-D-B-Fronte.jpeg" alt="Maglia-Azzurro-01-D-B-Fronte">
                 <figcaption>Maglia Azzurra 01<br/>19.99€</figcaption>
             </figure>
+        </div>
+        <div>
             <figure>
                 <img src="./img/Maglia-Azzurro-Bianco-02-D-B-Fronte.jpeg" alt="Maglia-Azzurro-01-D-B-Fronte">
                 <figcaption>Maglia Azzurra&Bianca 02<br/>23.99€</figcaption>
             </figure>
+        </div>
+        <div>
             <figure>
                 <img src="./img/Maglia-Azzurro-Bianco-03-D-B-Fronte.jpeg" alt="Maglia-Azzurro-01-D-B-Fronte">
                 <figcaption>Maglia Azzurra&Bianca 03<br/>25.99€</figcaption>
             </figure>
+        </div>
+        <div>
             <figure>
                 <img src="./img/Maglia-Azzurro-04-D-B-Fronte.jpeg" alt="Maglia-Azzurro-01-D-B-Fronte">
                 <figcaption>Maglia Azzurra 04<br/>29.99€</figcaption>
             </figure>
+        </div>
             <figure>
                 <img src="./img/Maglia-Rosso-01-U-B-Fronte.jpeg" alt="Maglia-Azzurro-01-D-B-Fronte">
                 <figcaption>Maglia Rossa 01<br/>19.99€</figcaption>
