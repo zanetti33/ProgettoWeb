@@ -25,7 +25,8 @@ CREATE TABLE Maglia(
     taglia varchar(10) NOT NULL,
     dispMagazzino int NOT NULL,
     prezzo float(7,2) NOT NULL,
-    immagine varchar(80) NOT NULL,
+    immagineFronte varchar(80) NOT NULL,
+    immagineRetro varchar(80) NOT NULL,
     FOREIGN KEY (idModello) REFERENCES Modello(idModello),
     FOREIGN KEY (idColore) REFERENCES Colore(idColore),
     FOREIGN KEY (idGenere) REFERENCES Genere(idGenere)
