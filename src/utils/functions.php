@@ -1,5 +1,8 @@
 <?php
 //qui si possono mettere funzioni php utili chiamabili ovunque
+
+$IMG_DIR = "./img/";
+
 function funzioneChiamabileOvunque($cond){
     return $cond;
 }
