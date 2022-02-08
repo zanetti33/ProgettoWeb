@@ -13,33 +13,34 @@ if(isset($_POST["nomeRegistrazione"])){
                             $_POST["cognomeRegistrazione"], 
                             $_POST["passwordRegistrazione"],
                             $_POST["telefonoRegistrazione"]);
-                        if($result){
-                            //registrazione avvenuta con successo
-                        }
-                        else{
+                        if($result == 1){
                             //registrato con successo
                             //login automatico
                             $_SESSION["email"] = $_POST["emailRegistrazione"];
                             $_SESSION["password"] = $_POST["passwordRegistrazione"];
                             $_SESSION["admin"] = 0;
                         }
+                        else{
+                            //errore nell'inserimento nel db
+                            $templateParams["messaggio"] = "si è verificato un errore nell'inserimento nel database";
+                        }
                     } else {
-                        $templateParams["errore"] = "numero di telefono non valido!";
+                        $templateParams["messaggio"] = "numero di telefono non valido!";
                     }
                 } else {
-                    $templateParams["errore"] = "le due password non corrispondono!";
+                    $templateParams["messaggio"] = "le due password non corrispondono!";
                 }
             } else {
-                $templateParams["errore"] = "password non inserita!";
+                $templateParams["messaggio"] = "password non inserita!";
             }
         } else {
-            $templateParams["errore"] = "email non valida!";
+            $templateParams["messaggio"] = "email non valida!";
         }
     } else {
-        $templateParams["errore"] = "cognome non inserito!";
+        $templateParams["messaggio"] = "cognome non inserito!";
     }
 } else {
-    $templateParams["errore"] = "nome non inserito!";
+    $templateParams["messaggio"] = "nome non inserito!";
 }
 
 //se già loggato

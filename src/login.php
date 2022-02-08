@@ -12,7 +12,7 @@ if(isset($_POST["email"]) && isset($_POST["password"])){
     $login_result = $dbh->checkLogin($_POST["email"], $_POST["password"]);
     if(count($login_result)==0){
         //Login fallito
-        $templateParams["errore"] = "Errore! Controllare email e password!";
+        $templateParams["messaggio"] = "Errore! Controllare email e password!";
     }
     else{
         //Login con successo
@@ -45,7 +45,9 @@ if(isset($_POST["nuovaPassword"]) && isset($_POST["vecchiaPassword"])){
         $_POST["vecchiaPassword"], 
         $_POST["nuovaPassword"]);
     if($pass_change_result==0){
-        $templateParams["errore"] = "Errore! password non modificata!";
+        $templateParams["messaggio"] = "Errore! password non modificata!";
+    } else {
+        $templateParams["messaggio"] = "Password modificata con successo!";
     }
 }
 
