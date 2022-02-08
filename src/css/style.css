@@ -22,7 +22,7 @@ header h1 {
     vertical-align: top;
 }
 
-header h1 a:visited, header h1 a:link{
+header h1 a:visited, header h1 a:link, main div a:visited, main div a:link {
     text-decoration: none;
     color: #fff;
 }
