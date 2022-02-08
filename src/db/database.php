@@ -43,9 +43,28 @@ class DatabaseHelper{
         $stmt = $this->db->prepare($query);
         $stmt->bind_param('sss', $nuovaPassword, $email, $vecchiaPassword);
         $stmt->execute();
-        $result = $stmt->affected_rows;
 
-        return $result;
+        return $stmt->affected_rows;
     } 
+
+    public function register($email, $nome, $cognome, $password, $telefono){
+        $query = "INSERT INTO account (email, nome, cognome, password, numeroTelefono)
+            VALUES (?, ?, ?, ?, ?)";
+        $stmt = $this->db->prepare($query);
+        $stmt->bind_param('sssss', $email, $nome, $cognome, $password, $telefono);
+        $stmt->execute();
+
+        return $stmt->affected_rows;
+    } 
+    
+    public function alreadyRegistered($email){
+        $query = "SELECT email FROM account WHERE email = ?";
+        $stmt = $this->db->prepare($query);
+        $stmt->bind_param('s', $email);
+        $stmt->execute();
+        $result = $stmt->get_result();
+
+        return $result->fetch_all(MYSQLI_ASSOC);
+    }
 }
 ?>
