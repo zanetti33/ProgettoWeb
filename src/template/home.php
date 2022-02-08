@@ -1,13 +1,13 @@
 			<section>
 				<h2><a href="prodotti.php?genere=U">Uomo</a></h2>
                 <div>
-                        <img src="./img/ProdottiUomo.jpg" alt="prodotti uomo" />
+                    <img <?php isActive("prodotti.php?genere=U");?> src="./img/ProdottiUomo.jpg" alt="prodotti uomo" />
                 </div>
             </section>
             <section>
                 <h2><a href="prodotti.php?genere=D">Donna</a></h2>
                 <div>
-                    <img src="./img/ProdottiDonna.jpg" alt="prodotti donna"/>
+                    <img <?php isActive("prodotti.php?genere=D");?> src="./img/ProdottiDonna.jpg" alt="prodotti donna"/>
                 </div>
             </section>
             <section>
