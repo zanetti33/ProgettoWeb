@@ -32,10 +32,10 @@ INSERT INTO genere (nome) VALUES
 ("Bambino");
 
 INSERT INTO modello (Nome, descrizione) VALUES
-("01", "tinta unita con bande laterali"),
-("02", "busto"),
-("03", "bicolore"),
-("04", "spalle");
+("01", "Tinta unita con bande laterali"),
+("02", "Maglia a V"),
+("03", "Bicolore"),
+("04", "Maniche colorate");
 
 INSERT INTO maglia (idModello, idColore, idGenere, taglia, dispMagazzino, prezzo, immagineFronte, immagineRetro) VALUES
 ("1", "1", "2", "XS", "100", "19.99", "Maglia-Azzurro-01-D-B-Fronte.jpeg", "Maglia-Azzurro-01-D-B-Retro.jpeg"),
@@ -102,12 +102,12 @@ INSERT INTO maglia (idModello, idColore, idGenere, taglia, dispMagazzino, prezzo
 ("2", "2", "1", "S", "100", "23.99", "Maglia-Bianco-Nero-02-U-D-B-Fronte.jpeg", "Maglia-Bianco-Nero-02-U-D-B-Retro.jpeg"),
 ("2", "2", "1", "M", "100", "23.99", "Maglia-Bianco-Nero-02-U-D-B-Fronte.jpeg", "Maglia-Bianco-Nero-02-U-D-B-Retro.jpeg"),
 ("2", "2", "1", "L", "100", "23.99", "Maglia-Bianco-Nero-02-U-D-B-Fronte.jpeg", "Maglia-Bianco-Nero-02-U-D-B-Retro.jpeg"),
-("2", "2", "1", "XL", "100", "239.99", "Maglia-Bianco-Nero-02-U-D-B-Fronte.jpeg", "Maglia-Bianco-Nero-02-U-D-B-Retro.jpeg"),
+("2", "2", "1", "XL", "100", "23.99", "Maglia-Bianco-Nero-02-U-D-B-Fronte.jpeg", "Maglia-Bianco-Nero-02-U-D-B-Retro.jpeg"),
 ("2", "2", "2", "XS", "100", "23.99", "Maglia-Bianco-Nero-02-U-D-B-Fronte.jpeg", "Maglia-Bianco-Nero-02-U-D-B-Retro.jpeg"),
 ("2", "2", "2", "S", "100", "23.99", "Maglia-Bianco-Nero-02-U-D-B-Fronte.jpeg", "Maglia-Bianco-Nero-02-U-D-B-Retro.jpeg"),
 ("2", "2", "2", "M", "100", "23.99", "Maglia-Bianco-Nero-02-U-D-B-Fronte.jpeg", "Maglia-Bianco-Nero-02-U-D-B-Retro.jpeg"),
 ("2", "2", "2", "L", "100", "23.99", "Maglia-Bianco-Nero-02-U-D-B-Fronte.jpeg", "Maglia-Bianco-Nero-02-U-D-B-Retro.jpeg"),
-("2", "2", "2", "XL", "100", "239.99", "Maglia-Bianco-Nero-02-U-D-B-Fronte.jpeg", "Maglia-Bianco-Nero-02-U-D-B-Retro.jpeg"),
+("2", "2", "2", "XL", "100", "23.99", "Maglia-Bianco-Nero-02-U-D-B-Fronte.jpeg", "Maglia-Bianco-Nero-02-U-D-B-Retro.jpeg"),
 ("2", "2", "3", "XS", "100", "23.99", "Maglia-Bianco-Nero-02-U-D-B-Fronte.jpeg", "Maglia-Bianco-Nero-02-U-D-B-Retro.jpeg"),
 ("2", "2", "3", "S", "100", "23.99", "Maglia-Bianco-Nero-02-U-D-B-Fronte.jpeg", "Maglia-Bianco-Nero-02-U-D-B-Retro.jpeg"),
 ("2", "2", "3", "M", "100", "23.99", "Maglia-Bianco-Nero-02-U-D-B-Fronte.jpeg", "Maglia-Bianco-Nero-02-U-D-B-Retro.jpeg"),
@@ -166,12 +166,12 @@ INSERT INTO maglia (idModello, idColore, idGenere, taglia, dispMagazzino, prezzo
 ("2", "3", "1", "S", "100", "23.99", "Maglia-Blu-Bianco-02-U-D-B-Fronte.jpeg", "Maglia-Blu-Bianco-02-U-D-B-Retro.jpeg"),
 ("2", "3", "1", "M", "100", "23.99", "Maglia-Blu-Bianco-02-U-D-B-Fronte.jpeg", "Maglia-Blu-Bianco-02-U-D-B-Retro.jpeg"),
 ("2", "3", "1", "L", "100", "23.99", "Maglia-Blu-Bianco-02-U-D-B-Fronte.jpeg", "Maglia-Blu-Bianco-02-U-D-B-Retro.jpeg"),
-("2", "3", "1", "XL", "100", "239.99", "Maglia-Blu-Bianco-02-U-D-B-Fronte.jpeg", "Maglia-Blu-Bianco-02-U-D-B-Retro.jpeg"),
+("2", "3", "1", "XL", "100", "23.99", "Maglia-Blu-Bianco-02-U-D-B-Fronte.jpeg", "Maglia-Blu-Bianco-02-U-D-B-Retro.jpeg"),
 ("2", "3", "2", "XS", "100", "23.99", "Maglia-Blu-Bianco-02-U-D-B-Fronte.jpeg", "Maglia-Blu-Bianco-02-U-D-B-Retro.jpeg"),
 ("2", "3", "2", "S", "100", "23.99", "Maglia-Blu-Bianco-02-U-D-B-Fronte.jpeg", "Maglia-Blu-Bianco-02-U-D-B-Retro.jpeg"),
 ("2", "3", "2", "M", "100", "23.99", "Maglia-Blu-Bianco-02-U-D-B-Fronte.jpeg", "Maglia-Blu-Bianco-02-U-D-B-Retro.jpeg"),
 ("2", "3", "2", "L", "100", "23.99", "Maglia-Blu-Bianco-02-U-D-B-Fronte.jpeg", "Maglia-Blu-Bianco-02-U-D-B-Retro.jpeg"),
-("2", "3", "2", "XL", "100", "239.99", "Maglia-Blu-Bianco-02-U-D-B-Fronte.jpeg", "Maglia-Blu-Bianco-02-U-D-B-Retro.jpeg"),
+("2", "3", "2", "XL", "100", "23.99", "Maglia-Blu-Bianco-02-U-D-B-Fronte.jpeg", "Maglia-Blu-Bianco-02-U-D-B-Retro.jpeg"),
 ("2", "3", "3", "XS", "100", "23.99", "Maglia-Blu-Bianco-02-U-D-B-Fronte.jpeg", "Maglia-Blu-Bianco-02-U-D-B-Retro.jpeg"),
 ("2", "3", "3", "S", "100", "23.99", "Maglia-Blu-Bianco-02-U-D-B-Fronte.jpeg", "Maglia-Blu-Bianco-02-U-D-B-Retro.jpeg"),
 ("2", "3", "3", "M", "100", "23.99", "Maglia-Blu-Bianco-02-U-D-B-Fronte.jpeg", "Maglia-Blu-Bianco-02-U-D-B-Retro.jpeg"),
