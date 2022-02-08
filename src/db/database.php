@@ -37,5 +37,15 @@ class DatabaseHelper{
 
         return $result->fetch_all(MYSQLI_ASSOC);
     } 
+
+    public function changePassword($email, $vecchiaPassword, $nuovaPassword){
+        $query = "UPDATE account SET password = ? WHERE email = ? AND password = ?";
+        $stmt = $this->db->prepare($query);
+        $stmt->bind_param('sss', $nuovaPassword, $email, $vecchiaPassword);
+        $stmt->execute();
+        $result = $stmt->affected_rows;
+
+        return $result;
+    } 
 }
 ?>

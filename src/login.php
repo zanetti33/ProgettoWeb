@@ -1,6 +1,13 @@
 <?php
 require_once 'bootstrap.php';
 
+if(isset($_POST["logout"])){
+    session_unset();
+    session_destroy();
+    session_start();
+}
+
+//login
 if(isset($_POST["email"]) && isset($_POST["password"])){
     $login_result = $dbh->checkLogin($_POST["email"], $_POST["password"]);
     if(count($login_result)==0){
@@ -15,6 +22,7 @@ if(isset($_POST["email"]) && isset($_POST["password"])){
     }
 }
 
+//se già loggato
 if(!empty($_SESSION["email"])){
     if($_SESSION["admin"]){
         //pagina Admin
@@ -29,6 +37,16 @@ if(!empty($_SESSION["email"])){
 else{
     $templateParams["titolo"] = "Blog TW - Login";
     $templateParams["nome"] = "login.php";
+}
+
+//eventuale cambio password
+if(isset($_POST["nuovaPassword"]) && isset($_POST["vecchiaPassword"])){
+    $pass_change_result = $dbh->changePassword($_SESSION["email"], 
+        $_POST["vecchiaPassword"], 
+        $_POST["nuovaPassword"]);
+    if($pass_change_result==0){
+        $templateParams["errore"] = "Errore! password non modificata!";
+    }
 }
 
 require 'template/base.php';
