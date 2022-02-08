@@ -3,7 +3,7 @@
                 <?php if(isset($templateParams["errore"])): ?>
                     <p><?php echo $templateParams["errore"]; ?></p>
                 <?php endif; ?>
-                <form action="#" method="POST">
+                <form action="" method="POST">
                     <ul>
                         <li>
                             <label for="nomeRegistrazione">Nome:</label>
