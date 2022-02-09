@@ -20,4 +20,22 @@ function isActive($pagename){
 function toTag($word){
     return preg_replace("/[^a-z]/", '', strtolower($word));
 }
+
+function getAction($action){
+    $result = "";
+    switch($action){
+        case 1:
+            $result = "Inserisci";
+            break;
+        case 2:
+            $result = "Modifica";
+            break;
+        case 3:
+            $result = "Cancella";
+            break;
+    }
+
+    return $result;
+}
+
 ?>

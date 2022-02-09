@@ -14,7 +14,7 @@
                             <input type="password" id="password" name="password" />
                         </li>
                         <li>
-                            <input type="submit" name="submit" value="Invia" />
+                            <input type="submit" name="invioLogin" value="Invia" />
                         </li>
                     </ul>
                 </form>

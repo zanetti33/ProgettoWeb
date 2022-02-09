@@ -30,7 +30,7 @@
                             <input type="password" id="confermaPassword" name="confermaPassword" />
                         </li>
                         <li>
-                            <input type="submit" name="submit" value="Invia" />
+                            <input type="submit" name="invioRegistrazione" value="Invia" />
                         </li>
                     </ul>
                 </form>

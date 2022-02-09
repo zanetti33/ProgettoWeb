@@ -8,17 +8,21 @@ if(isset($_POST["logout"])){
 }
 
 //login
-if(isset($_POST["email"]) && isset($_POST["password"])){
-    $login_result = $dbh->checkLogin($_POST["email"], $_POST["password"]);
-    if(count($login_result)==0){
-        //Login fallito
-        $templateParams["messaggio"] = "Errore! Controllare email e password!";
-    }
-    else{
-        //Login con successo
-        $_SESSION["email"] = $login_result[0]["email"];
-        $_SESSION["password"] = $login_result[0]["password"];
-        $_SESSION["admin"] = $login_result[0]["admin"];
+if(isset($_POST["invioLogin"])){
+    if(isset($_POST["email"]) && isset($_POST["password"])){
+        $login_result = $dbh->checkLogin($_POST["email"], $_POST["password"]);
+        if(count($login_result)==0){
+            //Login fallito
+            $templateParams["messaggio"] = "Errore! Controllare email e password!";
+        }
+        else{
+            //Login con successo
+            $_SESSION["email"] = $login_result[0]["email"];
+            $_SESSION["password"] = $login_result[0]["password"];
+            $_SESSION["admin"] = $login_result[0]["admin"];
+        }
+    } else {
+        $templateParams["messaggio"] = "email o password non inserite!";
     }
 }
 
@@ -28,6 +32,9 @@ if(!empty($_SESSION["email"])){
         //pagina Admin
         $templateParams["titolo"] = "Kits - Gestione";
         $templateParams["nome"] = "amministratore.php";
+        //amministratore template
+        $templateParams["ordini"] = null;
+        $templateParams["prodotti"] = null;
     } else {
         //pagina utente
         $templateParams["titolo"] = "Kits - Utente";
