@@ -1,6 +1,6 @@
 			<section>
                 <div>
-                        <img src="./img/ProdottiUomo.jpg" alt="prodotti uomo" />
+                        
                 </div>
                 <form>
                     <ul>

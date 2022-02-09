@@ -10,7 +10,7 @@ body{
 }
 
 body header{
-    background-color: rgb(0, 0, 255);
+    background-color: rgb(0, 127, 255);
     text-align: center;
     color: #fff; 
     font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
@@ -28,7 +28,7 @@ header h1 a:visited, header h1 a:link, main > div a:visited, main > div a:link {
 }
 
 header nav {
-    background-color: rgb(0, 0, 255);
+    background-color: rgb(0, 127, 255);
     float: right;
     margin-right: 5%;
     min-width: 100px;
@@ -47,7 +47,7 @@ header img, main section > img {
 }
 
 main section > img {
-    background-color: rgb(102, 102, 245);
+    background-color: rgb(0, 127, 225);
 }
 
 main section:last-child{
@@ -55,6 +55,11 @@ main section:last-child{
 }
 
 main > section > div > a > img{
+    max-width: 100%;
+    max-height: 300px;
+}
+
+main > section > div > img{
     max-width: 100%;
     max-height: 300px;
 }
@@ -80,15 +85,19 @@ main > section > h2 > a:visited, main > section > h2 > a:link{
 }
 
 h2 a:hover, h1 a:hover {
-    color: rgb(255,127,0);
+    color: rgb(0,0,255);
 }
 
-main section > img:hover, header img:hover {
-    background-color: orange;
+header img:hover{
+    background-color: #fff;
+}
+
+main section > img:hover {
+    background-color: rgb(0, 0, 255);
 }
 
 body > footer{
-    background-color: rgb(0, 0, 255);
+    background-color: rgb(0, 127, 255);
     text-align: center;
     color: #fff; 
     font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
@@ -108,7 +117,7 @@ form{
 }
 
 form h2, main > section > h2{
-    color: rgb(0,0,255);
+    color: rgb(0, 0, 255);
     font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
     margin: 0 0 20px;
 }
@@ -144,7 +153,7 @@ table{
 }
 
 table{
-    border: 1px solid rgb(255, 127, 0);
+    border: 1px solid rgb(0, 0, 255);
     padding: 5px;
     font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
     text-align: center;
