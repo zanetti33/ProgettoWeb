@@ -54,7 +54,7 @@ main section:last-child{
     text-align: center;
 }
 
-main > section > div > img{
+main > section > div > a > img{
     max-width: 100%;
     max-height: 300px;
 }
