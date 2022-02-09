@@ -10,10 +10,16 @@ class DatabaseHelper{
         mysqli_report(MYSQLI_REPORT_ERROR | MYSQLI_REPORT_STRICT);
     }
 
-    public function funzioneEsempio($n){
-		//inserire query qui
-        $stmt = $this->db->prepare("SELECT nome FROM persona WHERE eta=?");
-		//in questo caso inserisco n che è un intero (i) nel punto di domanda nella query
+    public function getLatestOrders($n=10){
+        $query = "SELECT idOrdine, email, dataPagamento, stato, 
+            (SELECT GROUP_CONCAT(idMaglia, '.', quantità) 
+            FROM maglia_ordinata
+            WHERE maglia_ordinata.idOrdine=ordine.idOrdine
+            GROUP BY maglia_ordinata.idOrdine) as maglie
+            FROM ordine
+            ORDER BY dataPagamento DESC 
+            LIMIT ?";
+        $stmt = $this->db->prepare($query);
         $stmt->bind_param('i',$n);
         $stmt->execute();
         $result = $stmt->get_result();
@@ -23,6 +29,14 @@ class DatabaseHelper{
 
     public function getAdmins(){
         $stmt = $this->db->prepare("SELECT email, nome, cognome FROM account WHERE admin=1");
+        $stmt->execute();
+        $result = $stmt->get_result();
+
+        return $result->fetch_all(MYSQLI_ASSOC);
+    }
+
+    public function getProducts(){
+        $stmt = $this->db->prepare("SELECT idMaglia, immagineFronte, dispMagazzino FROM maglia");
         $stmt->execute();
         $result = $stmt->get_result();
 
@@ -39,8 +53,8 @@ class DatabaseHelper{
     }
 
     public function getProductsInOrder($idOrder){
-        $stmt = $this->db->prepare("SELECT idMaglia, quantità, nomePersonalizzato, numeroPersonalizzato, costo
-            FROM maglia_ordinata WHERE idOrdine=?");
+        $stmt = $this->db->prepare("SELECT maglia.idMaglia, quantità, nomePersonalizzato, numeroPersonalizzato, costo, immagineFronte
+            FROM maglia_ordinata, maglia WHERE maglia.idMaglia = maglia_ordinata.idMaglia AND idOrdine=?");
         $stmt->bind_param("i", $idOrder);
         $stmt->execute();
         $result = $stmt->get_result();
@@ -124,6 +138,15 @@ class DatabaseHelper{
         $result = $stmt->get_result();
 
         return $result->fetch_all(MYSQLI_ASSOC);
+    }
+
+    public function addToProduct($id, $qta){
+        $query = "UPDATE maglia SET dispMagazzino = dispMagazzino + ? WHERE idMaglia = ?";
+        $stmt = $this->db->prepare($query);
+        $stmt->bind_param('ii', $qta, $id);
+        $stmt->execute();
+
+        return $stmt->affected_rows;
     }
 }
 ?>

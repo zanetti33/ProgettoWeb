@@ -22,7 +22,7 @@ header h1 {
     vertical-align: top;
 }
 
-header h1 a:visited, header h1 a:link, main div a:visited, main div a:link {
+header h1 a:visited, header h1 a:link, main > div a:visited, main > div a:link {
     text-decoration: none;
     color: #fff;
 }
@@ -98,6 +98,7 @@ body > footer{
 main > section{
     padding: 20px 5%;
     background-color: #fff;
+    text-align: center;
 }
 
 form{
@@ -155,6 +156,18 @@ table img{
 
 footer table {
     color: white;
+}
+
+main section div{
+    padding: 5%;
+}
+
+main section div ul{
+    list-style: none;
+}
+
+form input[type="number"]{
+    max-width: 50px;
 }
 
 @media screen and (min-width:768px){

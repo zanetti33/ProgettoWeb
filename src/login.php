@@ -33,8 +33,18 @@ if(!empty($_SESSION["email"])){
         $templateParams["titolo"] = "Kits - Gestione";
         $templateParams["nome"] = "amministratore.php";
         //amministratore template
-        $templateParams["ordini"] = null;
-        $templateParams["prodotti"] = null;
+        $templateParams["ordini"] = $dbh->getLatestOrders(5);
+        $templateParams["prodotti"] = $dbh->getProducts();
+        if(isset($_POST["aggiungi"]) &&
+            isset($_POST["idMaglia"]) &&
+            isset($_POST["quantità"])){
+            $result = $dbh->addToProduct($_POST["idMaglia"], $_POST["quantità"]);
+            if($result != 1){
+                $templateParams["messaggio2"] = "c'è stato un errore nell'aggiunta!";
+            } else {
+                $templateParams["messaggio2"] = "aggiunta eseguita con successo!";
+            }
+        }
     } else {
         //pagina utente
         $templateParams["titolo"] = "Kits - Utente";
