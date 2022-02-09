@@ -149,6 +149,10 @@ table{
     text-align: center;
 }
 
+table img{
+    max-width: 80%;
+}
+
 footer table {
     color: white;
 }

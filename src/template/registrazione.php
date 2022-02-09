@@ -1,7 +1,7 @@
             <section>
                 <h2>Registrazione</h2>
-                <?php if(isset($templateParams["errore"])): ?>
-                    <p><?php echo $templateParams["errore"]; ?></p>
+                <?php if(isset($templateParams["messaggio"])): ?>
+                    <p><?php echo $templateParams["messaggio"]; ?></p>
                 <?php endif; ?>
                 <form action="" method="POST">
                     <ul>

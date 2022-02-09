@@ -29,6 +29,25 @@ class DatabaseHelper{
         return $result->fetch_all(MYSQLI_ASSOC);
     }
 
+    public function getOrdersOfUser($email){
+        $stmt = $this->db->prepare("SELECT dataPagamento, stato, totale, idOrdine FROM ordine WHERE email=?");
+        $stmt->bind_param("s", $email);
+        $stmt->execute();
+        $result = $stmt->get_result();
+
+        return $result->fetch_all(MYSQLI_ASSOC);
+    }
+
+    public function getProductsInOrder($idOrder){
+        $stmt = $this->db->prepare("SELECT idMaglia, quantità, nomePersonalizzato, numeroPersonalizzato, costo
+            FROM maglia_ordinata WHERE idOrdine=?");
+        $stmt->bind_param("i", $idOrder);
+        $stmt->execute();
+        $result = $stmt->get_result();
+
+        return $result->fetch_all(MYSQLI_ASSOC);
+    }
+
     public function checkLogin($email, $password){
         $query = "SELECT email, password, admin FROM account WHERE email = ? AND password = ?";
         $stmt = $this->db->prepare($query);

@@ -32,6 +32,8 @@ if(!empty($_SESSION["email"])){
         //pagina utente
         $templateParams["titolo"] = "Kits - Utente";
         $templateParams["nome"] = "utente.php";
+        //utente template
+        $templateParams["ordini"] = $dbh->getOrdersOfUser($_SESSION["email"]);
     }
 }
 else{

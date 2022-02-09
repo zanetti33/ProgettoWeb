@@ -1,69 +1,48 @@
 			<section>
                 <h2>I miei ordini</h2>
-                <div>
-                    <h2> 14 Dicembre 2020 </h2>
-                    <table>
-                        <tr>
-                            <th>Modello</th>
-                            <th>Colore</th>
-                            <th>Taglia</th>
-                            <th>Genere</th>
-                            <th>Scritta</th>
-                            <th>Numero</th>
-                            <th>Quantità</th>
-                            <th>Costo</th>
-                        </tr>
-                        <tr>
-                            <th>345345</th>
-                            <th>blu</th>
-                            <th>xl</th>
-                            <th>uomo</th>
-                            <th></th>
-                            <th></th>
-                            <th>3</th>
-                            <th>30$</th>
-                        </tr>
-                        <tr>
-                            <th>636</th>
-                            <th>giallo</th>
-                            <th>xs</th>
-                            <th>donna</th>
-                            <th>Giulia</th>
-                            <th>15</th>
-                            <th>1</th>
-                            <th>20$</th>
-                        </tr>
-                    </table>
-                    <p>Totale: 30$</p>
-                    <p>Stato: boh</p>
-                </div>
-                <div>
-                    <h2> 14 Dicembre 2020 </h2>
-                    <table>
-                        <tr>
-                            <th>Codice</th>
-                            <th>Scritta</th>
-                            <th>Numero</th>
-                            <th>Quantità</th>
-                            <th>Costo</th>
-                        </tr>
-                        <tr>
-                            <td><img src="Maglia-Azzurro-01-D-B-Fronte.jpeg" alt=""></td>
-                            <th></th>
-                            <th></th>
-                            <th>3</th>
-                            <th>30$</th>
-                        </tr>
-                        <tr>
-                            <td><img src="Maglia-Azzurro-01-D-B-Fronte.jpeg" alt=""></td>
-                            <th>Ciao</th>
-                            <th>3</th>
-                            <th>1</th>
-                            <th>20$</th>
-                        </tr>
-                    </table>
-                    <p>Totale: 50$</p>
-                    <p>Stato: boh</p>
-                </div>
+                <?php foreach($templateParams["ordini"] as $ordine): ?>
+                    <div>
+                        <h2> Data pagamento: <?php echo $ordine["dataPagamento"] ?></h2>
+                        <h3> Stato: <?php echo $ordine["stato"] ?></h3>
+                        <table>
+                            <thead>
+                                <tr>
+                                    <th id="maglia">Maglia</th>
+                                    <th id="scritta">Scritta</th>
+                                    <th id="numero">Numero</th>
+                                    <th id="quantità">Quantità</th>
+                                    <th id="costo">Costo</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <?php foreach($dbh->getProductsInOrder($ordine["idOrdine"]) as $product): ?>
+                                <tr>
+                                    <td header="maglia">
+                                        <a href="singolo-prodotto.php?idMaglia=<?php echo $product["idMaglia"]; ?>">
+                                            <img src="<?php echo $IMG_DIR.$product["immagineFronte"]; ?>" alt="<?php echo $product["immagineFronte"]; ?>">
+                                        </a>
+                                    </td>
+                                    <td header="scritta">
+                                        <?php echo $product["nomePersonalizzato"]; ?>
+                                    </td>
+                                    <td header="numero">
+                                        <?php echo $product["numeroPersonalizzato"]; ?>
+                                    </td>
+                                    <td header="quantità">
+                                        <?php echo $product["quantità"]; ?>
+                                    </td>
+                                    <td header="costo">
+                                        <?php echo $product["costo"]; ?>
+                                    </td>
+                                </tr>
+                                <?php endforeach; ?>
+                                <tr>
+                                    <th id="totale">Totale:</th>
+                                    <td colspan=4 header="totale"><?php echo $ordine["totale"]; ?></td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                <?php endforeach; ?>
             </section>
             <?php require("credenziali.php") ?>

@@ -21,7 +21,7 @@
                         </li>
                     </ul>
                 </form>
-                <?php if(isset($templateParams["errore"])): ?>
-                    <p><?php echo $templateParams["errore"]; ?></p>
+                <?php if(isset($templateParams["messaggio"])): ?>
+                    <p><?php echo $templateParams["messaggio"]; ?></p>
                 <?php endif; ?>
             </section>
