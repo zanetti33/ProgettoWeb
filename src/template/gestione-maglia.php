@@ -31,7 +31,7 @@
                     <p> <?php echo $maglia["modello"] ?> </p>
                     <?php else: 
                         foreach($dbh->getModels() as $model): ?>
-                        <input require type="radio" id="<?php echo $model["idModello"]; ?>" name="modello" />
+                        <input require type="radio" id="<?php echo $model["idModello"]; ?>" value="<?php echo $model["idModello"]; ?>" name="modello" />
                         <label for="<?php echo $model["idModello"]; ?>"><?php echo $model["nome"]; ?></label>
                     <?php endforeach;
                     endif; ?>
@@ -41,7 +41,7 @@
                     <p> <?php echo $maglia["colore"] ?> </p>
                     <?php else: 
                         foreach($dbh->getColours() as $color): ?>
-                        <input require type="radio" id="<?php echo $color["idColore"]; ?>" name="colore" />
+                        <input require type="radio" id="<?php echo $color["idColore"]; ?>" value="<?php echo $color["idColore"]; ?>" name="colore" />
                         <label for="<?php echo $color["idColore"]; ?>"><?php echo $color["nome"]; ?></label>
                     <?php endforeach;
                     endif; ?>
@@ -51,7 +51,7 @@
                     <p> <?php echo $maglia["genere"] ?> </p>
                     <?php else: 
                         foreach($dbh->getGenders() as $gender): ?>
-                        <input require type="radio" id="<?php echo $gender["idGenere"]; ?>" name="genere" />
+                        <input require type="radio" id="<?php echo $gender["idGenere"]; ?>" value="<?php echo $gender["idGenere"]; ?>" name="genere" />
                         <label for="<?php echo $gender["idGenere"]; ?>"><?php echo $gender["nome"]; ?></label>
                     <?php endforeach;
                     endif; ?>

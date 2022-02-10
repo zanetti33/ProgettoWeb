@@ -62,6 +62,9 @@
             <section>
                 <h2>Elenco prodotti</h2>
                 <div>
+                    <?php if(isset($templateParams["messaggio1"])):?>
+                    <p><?php echo $templateParams["messaggio1"]; ?></p>
+                    <?php endif; ?>
                     <a href="gestisci-prodotto.php?action=1">Inserisci Maglia</a>
                     <table>
                         <thead>

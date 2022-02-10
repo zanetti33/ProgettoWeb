@@ -184,5 +184,36 @@ class DatabaseHelper{
 
         return $stmt->affected_rows;
     }
+
+    public function insertProduct($modello, $colore, $taglia, $genere, $dispMagazzino, $prezzo, $imgFronte, $imgRetro){
+        $query = "INSERT INTO maglia (idModello, idColore, taglia, idGenere, dispMagazzino,
+            prezzo, immagineFronte, immagineRetro) VALUES (?, ?, ?, ?, ?, ?, ?, ?)";
+        $stmt = $this->db->prepare($query);
+        $stmt->bind_param('iisiiiss', $modello, $colore, $taglia, $genere, $dispMagazzino,
+            $prezzo, $imgFronte, $imgRetro);
+        $stmt->execute();
+
+        return $stmt->insert_id;
+    }
+
+    public function updateProduct($id, $prezzo, $taglia, $immagineFronte, $immagineRetro, $dispMagazzino){
+        $query = "UPDATE maglia SET dispMagazzino = ?, prezzo = ?, taglia = ?,
+        immagineFronte = ?, immagineRetro = ? WHERE idMaglia = ?";
+        $stmt = $this->db->prepare($query);
+        $stmt->bind_param('iisssi', $dispMagazzino, $prezzo, $taglia,
+            $immagineFronte, $immagineRetro, $id);
+        $stmt->execute();
+
+        return $stmt->affected_rows;
+    }
+
+    public function removeProduct($id){
+        $query = "UPDATE maglia SET dispMagazzino = 0 WHERE idMaglia = ?";
+        $stmt = $this->db->prepare($query);
+        $stmt->bind_param('i', $id);
+        $stmt->execute();
+
+        return $stmt->affected_rows;
+    }
 }
 ?>
