@@ -1,4 +1,7 @@
-			<section>
+			<?php
+                $maglia = $templateParams["maglia"];
+            ?>
+            <section>
                 <div>
                     <img src="<?php echo $IMG_DIR.$maglia["immagineFronte"]; ?>" alt="<?php echo $maglia["immagineFronte"]; ?>">
                 </div>
@@ -38,12 +41,12 @@
             <section>
                 <h2>Descrizione prodotto:</h2>
                 <article>
-                    <?php echo $maglia["descrizione"]?></br>
-                    <?php echo $maglia["nome"]?><br/>
-                    <?php echo $maglia["genere"]?><br/>
-                    <?php echo $maglia["modello"]?><br/>
-                    <?php echo $maglia["colore"]?><br/>
-                    <?php echo $maglia["prezzo"]?>€
+                    <h3><?php echo $maglia["modello"]?></h3>
+                    <br><?php echo $maglia["descrizione"]?>
+                    <br><?php echo $maglia["genere"]?>
+                    <br><?php echo $maglia["colore"]?>
+                    <br><?php echo $maglia["prezzo"]?>€
+                    <br><br>
                 </article>
                 <table>
                     <caption>Guida alle taglie (cm):</caption>

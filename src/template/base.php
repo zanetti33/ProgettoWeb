@@ -43,9 +43,9 @@
                 <h2>Prodotti Popolari</h2>
                 <img src="./img/back.png" alt="precedente"/>
                 <div>
-                    <img src="./img/Maglia-Azzurro-01-D-B-Fronte.jpeg" alt="maglia azzurra"/>
-                    <img src="./img/Maglia-Azzurro-01-D-B-Retro.jpeg" alt="maglia azzurra retro"/>
-                    <img src="./img/Maglia-Bianco-01-U-D-B-Fronte.jpeg" alt="maglia bianca"/>
+                <?php foreach($templateParams["consigliati"] as $maglia): ?>
+                    <img src="<?php echo $IMG_DIR.$maglia["immagineFronte"]; ?>" alt="<?php echo $maglia["immagineFronte"]; ?>">
+                <?php endforeach; ?>
                 </div>
                 <img src="./img/next.png" alt="prossima"/>
         </section>
