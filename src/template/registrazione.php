@@ -7,27 +7,27 @@
                     <ul>
                         <li>
                             <label for="nomeRegistrazione">Nome:</label>
-                            <input type="text" id="nomeRegistrazione" name="nomeRegistrazione" />
+                            <input required type="text" id="nomeRegistrazione" name="nomeRegistrazione" />
                         </li>
                         <li>
                             <label for="cognomeRegistrazione">Cognome:</label>
-                            <input type="text" id="cognomeRegistrazione" name="cognomeRegistrazione" />
+                            <input required type="text" id="cognomeRegistrazione" name="cognomeRegistrazione" />
                         </li>
                         <li>
                             <label for="emailRegistrazione">Email:</label>
-                            <input type="text" id="emailRegistrazione" name="emailRegistrazione" />
+                            <input required type="text" id="emailRegistrazione" name="emailRegistrazione" />
                         </li>
                         <li>
                             <label for="telefonoRegistrazione">Numero di telefono:</label>
-                            <input type="text" id="telefonoRegistrazione" name="telefonoRegistrazione" />
+                            <input required type="text" id="telefonoRegistrazione" name="telefonoRegistrazione" />
                         </li>
                         <li>
                             <label for="passwordRegistrazione">Password:</label>
-                            <input type="password" id="passwordRegistrazione" name="passwordRegistrazione" />
+                            <input requid type="password" id="passwordRegistrazione" name="passwordRegistrazione" />
                         </li>
                         <li>
                             <label for="confermaPassword">Conferma password:</label>
-                            <input type="password" id="confermaPassword" name="confermaPassword" />
+                            <input required type="password" id="confermaPassword" name="confermaPassword" />
                         </li>
                         <li>
                             <input type="submit" name="invioRegistrazione" value="Invia" />

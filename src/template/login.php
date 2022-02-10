@@ -7,11 +7,11 @@
                     <ul>
                         <li>
                             <label for="email">Email:</label>
-                            <input type="text" id="email" name="email" />
+                            <input required type="text" id="email" name="email" />
                         </li>
                         <li>
                             <label for="password">Password:</label>
-                            <input type="password" id="password" name="password" />
+                            <input required type="password" id="password" name="password" />
                         </li>
                         <li>
                             <input type="submit" name="invioLogin" value="Invia" />

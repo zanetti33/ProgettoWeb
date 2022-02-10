@@ -5,8 +5,8 @@
                 <form>
                     <ul>
                         <li>
-                            <label>Taglia</label>
-                            <select name="taglia">
+                            <label>Taglia:</label>
+                            <select required name="taglia">
                                     <option value="xs">XS</option>
                                     <option value="s">S</option>
                                     <option value="m">M</option>
@@ -15,8 +15,16 @@
                             </select>
                         </li>
                         <li>
-                            <label>Quantità</label>
-                            <input type="number" name="quantità" min="1"/>
+                            <label>Quantità:</label>
+                            <input required type="number" name="quantità" min="1"/>
+                        </li>
+                        <li>
+                            <label>Nome(+5€):</label>
+                            <input type="text" id="nomePersonalizzato" name="nomePersonalizzato"/>
+                        </li>
+                        <li>
+                            <label>Numero(+5€):</label>
+                            <input type="number" name="numeroPersonalizzato" min="1" max="99"/>
                         </li>
                         <li>
                             <input type="submit" value="Aggiungi al carrello"/>
