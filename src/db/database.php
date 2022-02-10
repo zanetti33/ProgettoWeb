@@ -43,6 +43,16 @@ class DatabaseHelper{
         return $result->fetch_all(MYSQLI_ASSOC);
     }
 
+    public function mostSold($n = 3){
+        $query = "SELECT idMaglia, immagineFronte FROM maglia ORDER BY vendite DESC LIMIT ?";
+        $stmt = $this->db->prepare($query);
+        $stmt->bind_param('i',$n);
+        $stmt->execute();
+        $result = $stmt->get_result();
+
+        return $result->fetch_all(MYSQLI_ASSOC);
+    }
+
     public function getModels(){
         $stmt = $this->db->prepare("SELECT idModello, nome FROM modello");
         $stmt->execute();
@@ -87,7 +97,7 @@ class DatabaseHelper{
     }
 
     public function getProductById($id){
-        $stmt = $this->db->prepare("SELECT immagineFronte, immagineRetro, modello.nome as modello, colore.nome as colore, genere.nome as genere, prezzo, taglia, idMaglia, dispMagazzino
+        $stmt = $this->db->prepare("SELECT immagineFronte, immagineRetro, modello.nome as modello, modello.descrizione as descrizione, colore.nome as colore, genere.nome as genere, prezzo, taglia, idMaglia, dispMagazzino
             FROM maglia, modello, genere, colore WHERE maglia.idModello = modello.idModello AND
             maglia.idColore = colore.idColore AND maglia.idGenere = genere.idGenere AND
             maglia.idMaglia=?");
@@ -155,18 +165,18 @@ class DatabaseHelper{
         
         if (count($gen) <= 0 || count($gen) >= 3) {
             //Maglie di qualsiasi genere
-            $query = "SELECT M.idMaglia, M.prezzo, M.immagineFronte, O.descrizione, G.nome FROM maglia M, modello O, genere G WHERE M.dispMagazzino > 0 AND  M.idModello = O.idModello AND M.idGenere = G.idGenere AND idColore = ? GROUP BY M.idGenere, M.idModello";
+            $query = "SELECT M.idMaglia, M.prezzo, M.immagineFronte, O.nome as modello, G.nome as genere FROM maglia M, modello O, genere G WHERE M.dispMagazzino > 0 AND  M.idModello = O.idModello AND M.idGenere = G.idGenere AND idColore = ? GROUP BY M.idGenere, M.idModello";
             $stmt = $this->db->prepare($query);
             $stmt->bind_param('i', $colore);
 
         } elseif(count($gen) == 1) {
             //Maglie di UN genere
-            $query = "SELECT M.idMaglia, M.prezzo, M.immagineFronte, O.descrizione, G.nome FROM maglia M, modello O, genere G WHERE M.dispMagazzino > 0 AND M.idModello = O.idModello AND M.idGenere = G.idGenere AND M.idGenere = ? AND idColore = ? GROUP BY M.idGenere, M.idModello";
+            $query = "SELECT M.idMaglia, M.prezzo, M.immagineFronte, O.nome as modello, G.nome as genere FROM maglia M, modello O, genere G WHERE M.dispMagazzino > 0 AND M.idModello = O.idModello AND M.idGenere = G.idGenere AND M.idGenere = ? AND idColore = ? GROUP BY M.idGenere, M.idModello";
             $stmt = $this->db->prepare($query);
             $stmt->bind_param('ii', $gen[0], $colore);
         } else {
             //Maglie di DUE generi
-            $query = "SELECT M.idMaglia, M.prezzo, M.immagineFronte, O.descrizione, G.nome FROM maglia M, modello O, genere G WHERE M.dispMagazzino > 0 AND M.idModello = O.idModello AND M.idGenere = G.idGenere AND idColore = ? AND M.idGenere IN (?, ?) GROUP BY M.idGenere, M.idModello";
+            $query = "SELECT M.idMaglia, M.prezzo, M.immagineFronte, O.nome as modello, G.nome as genere FROM maglia M, modello O, genere G WHERE M.dispMagazzino > 0 AND M.idModello = O.idModello AND M.idGenere = G.idGenere AND idColore = ? AND M.idGenere IN (?, ?) GROUP BY M.idGenere, M.idModello";
             $stmt = $this->db->prepare($query);
             $stmt->bind_param('iii', $colore, $gen[0], $gen[1]);
         }

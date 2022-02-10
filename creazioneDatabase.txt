@@ -4,7 +4,7 @@ use magazzino;
 CREATE TABLE Modello(
     idModello int PRIMARY KEY AUTO_INCREMENT,
     nome varchar(50) NOT NULL,
-    descrizione varchar(500) NOT NULL
+    descrizione varchar(1000) NOT NULL
 );
 
 CREATE TABLE Colore(
@@ -24,6 +24,7 @@ CREATE TABLE Maglia(
     idGenere int NOT NULL,
     taglia varchar(10) NOT NULL,
     dispMagazzino int NOT NULL,
+    vendite int NOT NULL DEFAULT 0,
     prezzo float(7,2) NOT NULL,
     immagineFronte varchar(80) NOT NULL,
     immagineRetro varchar(80) NOT NULL,
