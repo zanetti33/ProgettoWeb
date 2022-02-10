@@ -136,6 +136,10 @@ form h2, main > section > h2{
     margin: 0 0 20px;
 }
 
+form fieldset{
+    text-align: left;
+}
+
 form ul{
     list-style: none;
     padding: 10%;

@@ -7,6 +7,7 @@
                     <input type="submit" name="logout" value="Logout" /> 
                 </form>
                 <form action="" method="POST">
+                    <fieldset>Cambia password:
                     <ul>
                         <li>
                             <label for="vecchiaPassword">Vecchia Password:</label>
@@ -20,6 +21,7 @@
                             <input type="submit" name="submit" value="Invia" /> 
                         </li>
                     </ul>
+                    </fieldset>
                 </form>
                 <?php if(isset($templateParams["messaggio"])): ?>
                     <p><?php echo $templateParams["messaggio"]; ?></p>

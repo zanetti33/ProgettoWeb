@@ -7,6 +7,7 @@
                     <img src="<?php echo $IMG_DIR.$maglia["immagineRetro"]; ?>" alt="<?php echo $maglia["immagineRetro"]; ?>">
                 </div>
                 <form>
+                    <fieldset>Personalizza:
                     <ul>
                         <li>
                             <label>Taglia:</label>
@@ -32,6 +33,7 @@
                             <input type="submit" value="Aggiungi al carrello"/>
                         </li>
                     </ul>
+                    </fieldset>
                 </form>
             </section>
             <section>
