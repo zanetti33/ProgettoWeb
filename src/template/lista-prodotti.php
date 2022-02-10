@@ -8,8 +8,8 @@
         </a>
     </div>
 <?php endforeach; ?>
-    
 
-
-
-
+<?php if(count($templateParams["maglieFiltrate"]) <= 0): ?>
+    <h2>Non sono state trovate maglie con questi parametri.</h2>
+    <p>Prova ad utilizzare altri filtri!</p>
+<?php endif; ?>

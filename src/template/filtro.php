@@ -1,34 +1,23 @@
-        <aside>
-            <form>
-                <ul>
-                    <li>
-                        <label>Uomo</label>
-                        <input type="checkbox" name="genere" value="U"/>
-                    </li>
-                    <li>
-                        <label>Donna</label>
-                        <input type="checkbox" name="genere" value="D"/>
-                    </li>
-                    <li>
-                        <label>Bambino</label>
-                        <input type="checkbox" name="genere" value="B"/>
-                    </li>
-                    <li>
-                        <label>Colore</label>
-                        <select name="colore">
-                            <option value="Azzurro">Azzurro</option>
-                            <option value="Bianco">Bianco</option>
-                            <option value="Blu">Blu</option>
-                            <option value="Giallo">Giallo</option>
-                            <option value="Nero">Nero</option>
-                            <option value="Rosa">Rosa</option>
-                            <option value="Rosso">Rosso</option>
-                            <option value="Viola">Viola</option>
-                        </select>
-                    </li>
-                    <li>
-                        <input type="submit" value="Filtra"/>
-                    </li>
-                </ul>
-            </form>
-        </aside>
+<aside>
+    <form>
+        <ul>
+            <?php foreach($templateParams["generi"] as $genere): ?>
+                <li>
+                    <label><?php echo $genere["nome"]?></label>
+                    <input type="checkbox" name="<?php echo $genere["nome"]?>" value="1"/>
+                </li>
+            <?php endforeach; ?>
+            <li>
+                <label>Colore</label>
+                <select name="colore">
+                    <?php foreach($templateParams["colori"] as $colore): ?>
+                        <option value="<?php echo $colore["idColore"]?>"><?php echo $colore["nome"]?></option>
+                    <?php endforeach; ?>
+                </select>
+            </li>
+            <li>
+                <input type="submit" value="Filtra"/>
+            </li>
+        </ul>
+    </form>
+</aside>

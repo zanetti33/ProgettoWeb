@@ -51,7 +51,7 @@ class DatabaseHelper{
         return $result->fetch_all(MYSQLI_ASSOC);
     }
 
-    public function getColours(){
+    public function getColors(){
         $stmt = $this->db->prepare("SELECT idColore, nome FROM colore");
         $stmt->execute();
         $result = $stmt->get_result();
@@ -138,37 +138,23 @@ class DatabaseHelper{
     }
 
     public function getFilteredShirts($generi, $colore){
-        
-        $gen = array();
-
-        if (isset($generi[0])) {
-            array_push($gen, $generi[0]);
-        }
-        if (isset($generi[1])) {
-            array_push($gen, $generi[1]);
-        }
-        if (isset($generi[2])) {
-            array_push($gen, $generi[2]);
-        }
-
-        //echo $gen[0]."   ".$colore;
-        
-        if (count($gen) <= 0 || count($gen) >= 3) {
+              
+        if (count($generi) <= 0 || count($generi) >= 3) {
             //Maglie di qualsiasi genere
             $query = "SELECT M.idMaglia, M.prezzo, M.immagineFronte, O.descrizione, G.nome FROM maglia M, modello O, genere G WHERE M.dispMagazzino > 0 AND  M.idModello = O.idModello AND M.idGenere = G.idGenere AND idColore = ? GROUP BY M.idGenere, M.idModello";
             $stmt = $this->db->prepare($query);
             $stmt->bind_param('i', $colore);
 
-        } elseif(count($gen) == 1) {
+        } elseif(count($generi) == 1) {
             //Maglie di UN genere
             $query = "SELECT M.idMaglia, M.prezzo, M.immagineFronte, O.descrizione, G.nome FROM maglia M, modello O, genere G WHERE M.dispMagazzino > 0 AND M.idModello = O.idModello AND M.idGenere = G.idGenere AND M.idGenere = ? AND idColore = ? GROUP BY M.idGenere, M.idModello";
             $stmt = $this->db->prepare($query);
-            $stmt->bind_param('ii', $gen[0], $colore);
+            $stmt->bind_param('ii', $generi[0], $colore);
         } else {
             //Maglie di DUE generi
             $query = "SELECT M.idMaglia, M.prezzo, M.immagineFronte, O.descrizione, G.nome FROM maglia M, modello O, genere G WHERE M.dispMagazzino > 0 AND M.idModello = O.idModello AND M.idGenere = G.idGenere AND idColore = ? AND M.idGenere IN (?, ?) GROUP BY M.idGenere, M.idModello";
             $stmt = $this->db->prepare($query);
-            $stmt->bind_param('iii', $colore, $gen[0], $gen[1]);
+            $stmt->bind_param('iii', $colore, $generi[0], $generi[1]);
         }
         $stmt->execute();
         $result = $stmt->get_result();
