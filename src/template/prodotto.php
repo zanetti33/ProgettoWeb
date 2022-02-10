@@ -1,12 +1,15 @@
 			<section>
                 <div>
-                        
+                    <img src="<?php echo $IMG_DIR.$maglia["immagineFronte"]; ?>" alt="<?php echo $maglia["immagineFronte"]; ?>">
+                </div>
+                <div>
+                    <img src="<?php echo $IMG_DIR.$maglia["immagineRetro"]; ?>" alt="<?php echo $maglia["immagineRetro"]; ?>">
                 </div>
                 <form>
                     <ul>
                         <li>
-                            <label>Taglia</label>
-                            <select name="taglia">
+                            <label>Taglia:</label>
+                            <select required name="taglia">
                                     <option value="xs">XS</option>
                                     <option value="s">S</option>
                                     <option value="m">M</option>
@@ -15,8 +18,16 @@
                             </select>
                         </li>
                         <li>
-                            <label>Quantità</label>
-                            <input type="number" name="quantità" min="1"/>
+                            <label>Quantità:</label>
+                            <input required type="number" name="quantità" min="1"/>
+                        </li>
+                        <li>
+                            <label>Nome(+5€):</label>
+                            <input type="text" id="nomePersonalizzato" name="nomePersonalizzato"/>
+                        </li>
+                        <li>
+                            <label>Numero(+5€):</label>
+                            <input type="number" name="numeroPersonalizzato" min="1" max="99"/>
                         </li>
                         <li>
                             <input type="submit" value="Aggiungi al carrello"/>
@@ -27,7 +38,12 @@
             <section>
                 <h2>Descrizione prodotto:</h2>
                 <article>
-
+                    <?php echo $maglia["descrizione"]?></br>
+                    <?php echo $maglia["nome"]?><br/>
+                    <?php echo $maglia["genere"]?><br/>
+                    <?php echo $maglia["modello"]?><br/>
+                    <?php echo $maglia["colore"]?><br/>
+                    <?php echo $maglia["prezzo"]?>€
                 </article>
                 <table>
                     <caption>Guida alle taglie (cm):</caption>

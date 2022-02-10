@@ -1,5 +1,5 @@
-CREATE DATABASE InserireNomeDelDatabase;
-use InserireNomeDelDatabase;
+CREATE DATABASE magazzino;
+use magazzino;
 
 CREATE TABLE Modello(
     idModello int PRIMARY KEY AUTO_INCREMENT,
