@@ -62,10 +62,7 @@
             <section>
                 <h2>Elenco prodotti</h2>
                 <div>
-                    <?php if(isset($templateParams["messaggio1"])):?>
-                    <p><?php echo $templateParams["messaggio1"]; ?></p>
-                    <?php endif; ?>
-                    <a href="gestione-maglia.php?action=1">Inserisci Maglia</a>
+                    <a href="gestisci-prodotto.php?action=1">Inserisci Maglia</a>
                     <table>
                         <thead>
                             <tr>
@@ -82,8 +79,8 @@
                                 <td headers="<?php echo $maglia["idMaglia"]; ?> quantità"><?php echo $maglia["dispMagazzino"]; ?></td>
                                 <td headers="<?php echo $maglia["idMaglia"]; ?> immagine"><img src="<?php echo UPLOAD_DIR.$maglia["immagineFronte"]; ?>" alt="" /></td>
                                 <td headers="<?php echo $maglia["idMaglia"]; ?> azioni">
-                                    <a href="gestione-maglia.php?action=2&id=<?php echo $maglia["idMaglia"]; ?>"> Modifica </a>
-                                    <a href="gestione-maglia.php?action=3&id=<?php echo $maglia["idMaglia"]; ?>"> Cancella </a>
+                                    <a href="gestisci-prodotto.php?action=2&id=<?php echo $maglia["idMaglia"]; ?>"> Modifica </a>
+                                    <a href="gestisci-prodotto.php?action=3&id=<?php echo $maglia["idMaglia"]; ?>"> Cancella </a>
                                 </td>
                             </tr>
                             <?php endforeach; ?>

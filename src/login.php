@@ -35,6 +35,9 @@ if(!empty($_SESSION["email"])){
         //amministratore template
         $templateParams["ordini"] = $dbh->getLatestOrders(5);
         $templateParams["prodotti"] = $dbh->getProducts();
+        if(isset($_GET["formmsg"])){
+            $templateParams["messaggio1"] = $_GET["formmsg"];
+        }
         if(isset($_POST["aggiungi"]) &&
             isset($_POST["idMaglia"]) &&
             isset($_POST["quantità"])){
