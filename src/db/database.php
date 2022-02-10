@@ -77,6 +77,14 @@ class DatabaseHelper{
         return $result->fetch_all(MYSQLI_ASSOC);
     }
 
+    public function getSizes(){
+        $stmt = $this->db->prepare("SELECT taglia FROM maglia GROUP BY taglia");
+        $stmt->execute();
+        $result = $stmt->get_result();
+
+        return $result->fetch_all(MYSQLI_ASSOC);
+    }
+
     public function getOrdersOfUser($email){
         $stmt = $this->db->prepare("SELECT dataPagamento, stato, totale, idOrdine FROM ordine WHERE email=?");
         $stmt->bind_param("s", $email);
@@ -147,7 +155,7 @@ class DatabaseHelper{
         return $result->fetch_all(MYSQLI_ASSOC);
     }
 
-    public function getFilteredShirts($generi, $colore){
+    public function getFilteredShirts($generi, $colore = 2){
               
         if (count($generi) <= 0 || count($generi) >= 3) {
             //Maglie di qualsiasi genere

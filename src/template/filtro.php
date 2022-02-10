@@ -4,7 +4,7 @@
             <?php foreach($templateParams["generi"] as $genere): ?>
                 <li>
                     <label><?php echo $genere["nome"]?></label>
-                    <input type="checkbox" name="<?php echo $genere["nome"]?>" value="1"/>
+                    <input type="checkbox" name="<?php echo toTag($genere["nome"])?>" value="1"/>
                 </li>
             <?php endforeach; ?>
             <li>

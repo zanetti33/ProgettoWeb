@@ -1,6 +1,4 @@
-			<?php
-                $maglia = $templateParams["maglia"];
-            ?>
+<?php $maglia = $templateParams["maglia"]; ?>
             <section>
                 <div>
                     <img src="<?php echo $IMG_DIR.$maglia["immagineFronte"]; ?>" alt="<?php echo $maglia["immagineFronte"]; ?>">
@@ -13,11 +11,9 @@
                         <li>
                             <label>Taglia:</label>
                             <select required name="taglia">
-                                    <option value="xs">XS</option>
-                                    <option value="s">S</option>
-                                    <option value="m">M</option>
-                                    <option value="l">L</option>
-                                    <option value="xl">XL</option>
+                                <?php foreach($templateParams["taglie"] as $taglia): ?>
+                                    <option value="<?php echo toTag($taglia["taglia"])?>"><?php echo $taglia["taglia"]?></option>
+                                <?php endforeach; ?>
                             </select>
                         </li>
                         <li>

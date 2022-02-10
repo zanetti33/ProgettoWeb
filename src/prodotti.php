@@ -11,14 +11,17 @@ $templateParams["generi"] = $dbh->getGenders();
 
 $generi = array();
 foreach ($templateParams["generi"] as $genere) {
-    if(isset($_GET[$genere["nome"]])){
+    if(isset($_GET[toTag($genere["nome"])])){
         array_push($generi, $genere["idGenere"]);
     }
 }
 
-$colore = 0;
+$colore = 2;
 if(isset($_GET["colore"])){
     $colore = $_GET["colore"];
+}
+if($colore > count($templateParams["colori"])) {
+
 }
 
 $templateParams["maglieFiltrate"] = $dbh->getFilteredShirts($generi, $colore);

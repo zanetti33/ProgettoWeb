@@ -5,7 +5,15 @@ require_once 'bootstrap.php';
 $templateParams["titolo"] = "Kits";
 $templateParams["nome"] = "prodotto.php";
 //Home Template
-$templateParams["maglia"] = $dbh->getProductById($_GET["idMaglia"])[0];
+
+$templateParams["taglie"] = $dbh->getSizes();
+
+$id = 1;
+if(isset($_GET["idMaglia"])){
+    $id = $_GET["idMaglia"];
+}
+
+$templateParams["maglia"] = $dbh->getProductById($id)[0];
 
 require 'template/base.php';
 ?>
