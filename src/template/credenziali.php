@@ -7,7 +7,7 @@
                     <input type="submit" name="logout" value="Logout" /> 
                 </form>
                 <form action="" method="POST">
-                    <fieldset>Cambia password:
+                    <fieldset><legend>Cambia password:</legend>
                     <ul>
                         <li>
                             <label for="vecchiaPassword">Vecchia Password:</label>

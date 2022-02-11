@@ -7,7 +7,7 @@
                     <img src="<?php echo $IMG_DIR.$maglia["immagineRetro"]; ?>" alt="<?php echo $maglia["immagineRetro"]; ?>">
                 </div>
                 <form>
-                    <fieldset>Personalizza:
+                    <fieldset><legend>Personalizza:</legend>
                     <ul>
                         <li>
                             <label>Taglia:</label>
