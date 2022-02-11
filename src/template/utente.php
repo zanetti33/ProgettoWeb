@@ -8,6 +8,7 @@
                             <thead>
                                 <tr>
                                     <th id="maglia">Maglia</th>
+                                    <th id="taglia">Taglia</th>
                                     <th id="scritta">Scritta</th>
                                     <th id="numero">Numero</th>
                                     <th id="quantità">Quantità</th>
@@ -21,6 +22,9 @@
                                         <a href="singolo-prodotto.php?idMaglia=<?php echo $product["idMaglia"]; ?>">
                                             <img src="<?php echo $IMG_DIR.$product["immagineFronte"]; ?>" alt="<?php echo $product["immagineFronte"]; ?>">
                                         </a>
+                                    </td>
+                                    <td header="taglia">
+                                        <?php echo $product["taglia"]; ?>
                                     </td>
                                     <td header="scritta">
                                         <?php echo $product["nomePersonalizzato"]; ?>
@@ -38,7 +42,7 @@
                                 <?php endforeach; ?>
                                 <tr>
                                     <th id="totale">Totale:</th>
-                                    <td colspan=4 header="totale"><?php echo $ordine["totale"]; ?></td>
+                                    <td colspan=5 header="totale"><?php echo $ordine["totale"]; ?></td>
                                 </tr>
                             </tbody>
                         </table>

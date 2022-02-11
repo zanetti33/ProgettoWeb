@@ -34,6 +34,14 @@ function getAction($action){
     return $result;
 }
 
+function totalCart($maglie){
+    $tot = 0;
+    foreach($maglie as $maglia){
+        $tot += $maglia["costo"];
+    }
+    return $tot;
+}
+
 function uploadImage($path, $image){
     $imageName = basename($image["name"]);
     $fullPath = $path.$imageName;

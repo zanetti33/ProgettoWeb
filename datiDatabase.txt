@@ -363,3 +363,21 @@ INSERT INTO maglia (idModello, idColore, idGenere, taglia, dispMagazzino, prezzo
 ("4", "8", "2", "M", "100", "29.99", "Maglia-Viola-04-D-Fronte.jpeg", "Maglia-Viola-04-D-Retro.jpeg"),
 ("4", "8", "2", "L", "100", "29.99", "Maglia-Viola-04-D-Fronte.jpeg", "Maglia-Viola-04-D-Retro.jpeg"),
 ("4", "8", "2", "XL", "100", "29.99", "Maglia-Viola-04-D-Fronte.jpeg", "Maglia-Viola-04-D-Retro.jpeg");
+
+INSERT INTO ordine(idOrdine, email, dataPagamento, stato, totale) VALUES
+("1", "lorenzo.zanetti33@gmail.com", "2022-02-08 10:30:12", "consegnato", 63.97),
+("2", "lorenzo.zanetti33@gmail.com", "2022-01-30 20:12:09", "consegnato", 107.97),
+("3", "lorenzo.zanetti33@gmail.com", "2021-12-24 12:00:00", "consegnato", 69.97), 
+("4", "pinco.pallino@gmail.com", "2022-01-25 12:56:25", "consegnato", 497.81),
+("5", "pinco.pallino@gmail.com", "2021-09-30 21:00:56", "consegnato", 29.99);
+
+INSERT INTO maglia_ordinata(idMaglia, idOrdine, quantità, nomePersonalizzato, numeroPersonalizzato, costo) VALUES
+("41", "1", "2", NULL, NULL, 39.98),
+("286", "1", "1", NULL, NULL, 23.99),
+("226", "2", "3", "Pippo", "99", 107.97),
+("201", "3", "1", "Lucia", NULL, 24.99),
+("201", "3", "1", NULL, NULL, 19.99),
+("201", "3", "1", NULL, "8", 24.99),
+("81", "4", "18", NULL, NULL, 467.82),
+("241", "4", "1", "pinco pallo", "10", 29.99),
+("241", "5", "1", "pinco pallo", "10", 29.99);

@@ -55,7 +55,7 @@ if(!empty($_SESSION["email"])){
     }
 }
 else{
-    $templateParams["titolo"] = "Blog TW - Login";
+    $templateParams["titolo"] = "Kits - Login";
     $templateParams["nome"] = "login.php";
 }
 

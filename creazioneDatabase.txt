@@ -64,13 +64,13 @@ CREATE TABLE Maglia_in_carrello(
 );
 
 CREATE TABLE Maglia_ordinata(
+    idRiga int PRIMARY KEY AUTO_INCREMENT,
     idMaglia int NOT NULL,
     idOrdine int NOT NULL,
     quantità int NOT NULL,
     nomePersonalizzato varchar(20),
     numeroPersonalizzato int(2),
     costo float(7,2) NOT NULL,
-    PRIMARY KEY (idMaglia, idOrdine),
     FOREIGN KEY (idMaglia) REFERENCES Maglia(idMaglia),
     FOREIGN KEY (idOrdine) REFERENCES Ordine(idOrdine)
 );
