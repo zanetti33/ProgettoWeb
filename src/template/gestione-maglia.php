@@ -11,18 +11,22 @@
             <?php else: ?>
             <ul>
                 <li>
-                    <?php if($templateParams["azione"]!=3): ?>
-                    <label for="immagineFronte">Immagine fronte</label><input require type="file" name="immagineFronte" id="immagineFronte" />
-                    <?php endif; ?>
-                    <?php if($templateParams["azione"]!=1): ?>
+                    <?php if($templateParams["azione"]==1): ?>
+                    <label for="immagineFronte">Immagine fronte</label><input required type="file" name="immagineFronte" id="immagineFronte" />
+                    <?php elseif ($templateParams["azione"]==2): ?>
+                    <label for="immagineFronte">Immagine fronte</label><input type="file" name="immagineFronte" id="immagineFronte" />
+                    <?php endif;
+                    if($templateParams["azione"]!=1): ?>
                     <img src="<?php echo UPLOAD_DIR.$maglia["immagineFronte"]; ?>" alt="" />
                     <?php endif; ?>
                 </li>
                 <li>
-                    <?php if($templateParams["azione"]!=3): ?>
-                    <label for="immagineRetro">Immagine retro</label><input require type="file" name="immagineRetro" id="immagineRetro" />
-                    <?php endif; ?>
-                    <?php if($templateParams["azione"]!=1): ?>
+                <?php if($templateParams["azione"]==1): ?>
+                    <label for="immagineRetro">Immagine retro</label><input required type="file" name="immagineRetro" id="immagineRetro" />
+                    <?php elseif ($templateParams["azione"]==2): ?>
+                    <label for="immagineRetro">Immagine retro</label><input type="file" name="immagineRetro" id="immagineRetro" />
+                    <?php endif;
+                    if($templateParams["azione"]!=1): ?>
                     <img src="<?php echo UPLOAD_DIR.$maglia["immagineRetro"]; ?>" alt="" />
                     <?php endif; ?>
                 </li>
@@ -31,7 +35,7 @@
                     <p> <?php echo $maglia["modello"] ?> </p>
                     <?php else: 
                         foreach($dbh->getModels() as $model): ?>
-                        <input require type="radio" id="<?php echo $model["idModello"]; ?>" value="<?php echo $model["idModello"]; ?>" name="modello" />
+                        <input required type="radio" id="<?php echo $model["idModello"]; ?>" value="<?php echo $model["idModello"]; ?>" name="modello" />
                         <label for="<?php echo $model["idModello"]; ?>"><?php echo $model["nome"]; ?></label>
                     <?php endforeach;
                     endif; ?>
@@ -40,8 +44,8 @@
                     <?php if($templateParams["azione"]!=1): ?>
                     <p> <?php echo $maglia["colore"] ?> </p>
                     <?php else: 
-                        foreach($dbh->getColours() as $color): ?>
-                        <input require type="radio" id="<?php echo $color["idColore"]; ?>" value="<?php echo $color["idColore"]; ?>" name="colore" />
+                        foreach($dbh->getColors() as $color): ?>
+                        <input required type="radio" id="<?php echo $color["idColore"]; ?>" value="<?php echo $color["idColore"]; ?>" name="colore" />
                         <label for="<?php echo $color["idColore"]; ?>"><?php echo $color["nome"]; ?></label>
                     <?php endforeach;
                     endif; ?>
@@ -51,7 +55,7 @@
                     <p> <?php echo $maglia["genere"] ?> </p>
                     <?php else: 
                         foreach($dbh->getGenders() as $gender): ?>
-                        <input require type="radio" id="<?php echo $gender["idGenere"]; ?>" value="<?php echo $gender["idGenere"]; ?>" name="genere" />
+                        <input required type="radio" id="<?php echo $gender["idGenere"]; ?>" value="<?php echo $gender["idGenere"]; ?>" name="genere" />
                         <label for="<?php echo $gender["idGenere"]; ?>"><?php echo $gender["nome"]; ?></label>
                     <?php endforeach;
                     endif; ?>
@@ -62,9 +66,9 @@
                     <?php else: ?>
                         <label for="prezzo">Prezzo:</label>
                     <?php   if($templateParams["azione"]==2): ?>
-                                <input require type="number" id="prezzo" name="prezzo" value="<?php echo $maglia["prezzo"] ?>" />
+                                <input required type="number" id="prezzo" name="prezzo" value="<?php echo $maglia["prezzo"] ?>" />
                     <?php   else: ?>
-                                <input require type="number" id="prezzo" name="prezzo" />
+                                <input required type="number" id="prezzo" name="prezzo" />
                     <?php   endif;
                         endif; ?>
                 </li>
@@ -74,9 +78,9 @@
                     <?php else: ?>
                         <label for="taglia">Taglia:</label>
                     <?php   if($templateParams["azione"]==2): ?>
-                                <input require type="text" id="taglia" name="taglia" value="<?php echo $maglia["taglia"] ?>" />
+                                <input required type="text" id="taglia" name="taglia" value="<?php echo $maglia["taglia"] ?>" />
                     <?php   else: ?>
-                                <input require type="text" id="taglia" name="taglia" />
+                                <input required type="text" id="taglia" name="taglia" />
                     <?php   endif;
                         endif; ?>
                 </li>
@@ -86,9 +90,9 @@
                     <?php else: ?>
                         <label for="dispMagazzino">Disponabilità magazzino:</label>
                     <?php   if($templateParams["azione"]==2): ?>
-                                <input require type="number" id="dispMagazzino" name="dispMagazzino" value="<?php echo $maglia["dispMagazzino"] ?>" />
+                                <input required type="number" id="dispMagazzino" name="dispMagazzino" value="<?php echo $maglia["dispMagazzino"] ?>" />
                     <?php   else: ?>
-                                <input require type="number" id="dispMagazzino" name="dispMagazzino" />
+                                <input required type="number" id="dispMagazzino" name="dispMagazzino" />
                     <?php   endif;
                         endif; ?>
                 </li>

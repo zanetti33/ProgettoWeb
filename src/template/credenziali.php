@@ -11,14 +11,14 @@
                     <ul>
                         <li>
                             <label for="vecchiaPassword">Vecchia Password:</label>
-                            <input type="password" id="vecchiaPassword" name="vecchiaPassword" />
+                            <input required type="password" id="vecchiaPassword" name="vecchiaPassword" />
                         </li>
                         <li>
                             <label for="nuovaPassword">Nuova Password:</label>
-                            <input type="password" id="nuovaPassword" name="nuovaPassword" />
+                            <input required type="password" id="nuovaPassword" name="nuovaPassword" />
                         </li>
                         <li> 
-                            <input type="submit" name="submit" value="Invia" /> 
+                            <input type="submit" name="cambia" value="cambia" /> 
                         </li>
                     </ul>
                     </fieldset>

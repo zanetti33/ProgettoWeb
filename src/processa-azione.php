@@ -9,31 +9,26 @@ if(empty($_SESSION["email"]) ||
 
 if($_POST["action"]==1){
     //Inserisco
-    if(isset($_FILES["immagineFronte"]) && strlen($_FILES["immagineFronte"]["name"])>0 &&
-        isset($_FILES["immagineRetro"]) && strlen($_FILES["immagineRetro"]["name"])>0 &&
-        isset($_POST["modello"]) && isset($_POST["colore"]) && isset($_POST["taglia"]) &&
-        isset($_POST["genere"]) && isset($_POST["dispMagazzino"]) && isset($_POST["prezzo"])){
-        $taglia = htmlspecialchars($_POST["taglia"]);
+    $taglia = htmlspecialchars($_POST["taglia"]);
 
-        list($result1, $msg1) = uploadImage(UPLOAD_DIR, $_FILES["immagineFronte"]);
-        list($result2, $msg2) = uploadImage(UPLOAD_DIR, $_FILES["immagineRetro"]);
-        if($result1 != 0 &&
-            $result2 != 0){
-            $imgFronte = $msg1;
-            $imgRetro = $msg2;
-            $id = $dbh->insertProduct($_POST["modello"], $_POST["colore"], $taglia,
-                $_POST["genere"], $_POST["dispMagazzino"], $_POST["prezzo"],
-                $imgFronte, $imgRetro);
-            if($id!=false){
-                $msg = "Inserimento completato correttamente!";
-            }
-            else{
-                $msg = "Errore durante l'inserimento nel db!";
-            }
-            
+    list($result1, $msg1) = uploadImage(UPLOAD_DIR, $_FILES["immagineFronte"]);
+    list($result2, $msg2) = uploadImage(UPLOAD_DIR, $_FILES["immagineRetro"]);
+    if($result1 != 0 &&
+        $result2 != 0){
+        $imgFronte = $msg1;
+        $imgRetro = $msg2;
+        $id = $dbh->insertProduct($_POST["modello"], $_POST["colore"], $taglia,
+            $_POST["genere"], $_POST["dispMagazzino"], $_POST["prezzo"],
+            $imgFronte, $imgRetro);
+        if($id!=false){
+            $msg = "Inserimento completato correttamente!";
         }
+        else{
+            $msg = "Errore durante l'inserimento nel db!";
+        }
+            
     } else {
-        $msg = "errore nei campi inseriti!";
+        $msg = "Errore nel caricamento delle immagini!";
     }
     header("location: login.php?formmsg=".$msg);
 }
@@ -68,7 +63,7 @@ if($_POST["action"]==2){
     if($result == 1){
         $msg = "Modifica completata correttamente!";
     } else {
-        $msg = "errore nella modifica!";
+        $msg = "non c'è stata alcuna modifica! potrebbe esserci stato un errore...";
     }
     header("location: login.php?formmsg=".$msg);
 }

@@ -38,9 +38,7 @@ if(!empty($_SESSION["email"])){
         if(isset($_GET["formmsg"])){
             $templateParams["messaggio1"] = $_GET["formmsg"];
         }
-        if(isset($_POST["aggiungi"]) &&
-            isset($_POST["idMaglia"]) &&
-            isset($_POST["quantità"])){
+        if(isset($_POST["aggiungi"])){
             $result = $dbh->addToProduct($_POST["idMaglia"], $_POST["quantità"]);
             if($result != 1){
                 $templateParams["messaggio2"] = "c'è stato un errore nell'aggiunta!";
@@ -62,7 +60,7 @@ else{
 }
 
 //eventuale cambio password
-if(isset($_POST["nuovaPassword"]) && isset($_POST["vecchiaPassword"])){
+if(isset($_POST["cambia"])){
     $pass_change_result = $dbh->changePassword($_SESSION["email"], 
         $_POST["vecchiaPassword"], 
         $_POST["nuovaPassword"]);

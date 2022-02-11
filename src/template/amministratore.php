@@ -9,11 +9,11 @@
                         <ul>
                             <li>
                                 <label for="idMaglia">Id Maglia:</label>
-                                <input type="number" id="idMaglia" name="idMaglia" />
+                                <input required type="number" id="idMaglia" name="idMaglia" />
                             </li>
                             <li>
                                 <label for="quantità">Quantità da aggiungere:</label>
-                                <input type="number" id="quantità" name="quantità" />
+                                <input required type="number" id="quantità" name="quantità" />
                             </li>
                             <li>
                                 <input type="submit" name="aggiungi" value="aggiungi" />
