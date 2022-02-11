@@ -140,7 +140,7 @@ form fieldset{
     text-align: left;
 }
 
-form ul{
+form ul, fieldset ul{
     list-style: none;
     padding: 10%;
 }
