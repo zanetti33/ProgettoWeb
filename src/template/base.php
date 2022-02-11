@@ -22,6 +22,7 @@
 <body>
     <header>
         <h1><a <?php isActive("index.php");?> href="index.php">Kits</a></h1>
+        <a href="index.php"><img src="./img/football.jpg" alt="ball"></a>
 		<nav>
             <ul>
                 <?php require("menu.php") ?>
