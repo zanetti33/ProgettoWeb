@@ -1,40 +1,65 @@
 <?php $maglia = $templateParams["maglia"]; ?>
-            <section>
-                <div>
-                    <img src="<?php echo $IMG_DIR.$maglia["immagineFronte"]; ?>" alt="<?php echo $maglia["immagineFronte"]; ?>">
-                </div>
-                <div>
-                    <img src="<?php echo $IMG_DIR.$maglia["immagineRetro"]; ?>" alt="<?php echo $maglia["immagineRetro"]; ?>">
-                </div>
-                <form>
-                    <fieldset><legend>Personalizza:</legend>
-                    <ul>
+    <section>
+        <div>
+            <img src="<?php echo $IMG_DIR.$maglia["immagineFronte"]; ?>" alt="<?php echo $maglia["immagineFronte"]; ?>">
+        </div>
+        <div>
+            <img src="<?php echo $IMG_DIR.$maglia["immagineRetro"]; ?>" alt="<?php echo $maglia["immagineRetro"]; ?>">
+        </div>
+            <fieldset><legend>Personalizza:</legend>
+                <ul>
+                    <li>
+                        <p>Taglia: <?php echo $maglia["taglia"]?></p>
+                    </li>
+                    <li>
+                        <label for="taglia">Seleziona un'altra taglia:</label>
+                        <?php /* NON FUNZIONAAAAAAAAAA */ ?>
+                        <form action="" method="POST">
+                        <ul>
+                            <?php foreach($templateParams["taglie"] as $taglia): ?>
+                                <?php if($taglia["taglia"] != $maglia["taglia"]): ?>
+                                    <li>
+                                        <label><?php echo $taglia["taglia"]?></label>
+                                        <input type="radio" name="taglia" value="<?php echo $taglia["taglia"]?>"/>
+                                    </li>
+                                <?php endif; ?>
+                            <?php endforeach; ?>
+                            <li>
+                                <input type="submit" name="cambioTaglia" value="Cambia taglia"/>
+                            </li>
+                        </ul>
+                    </form>
+                    <?php/* ANDREBBE FATTA LA STESSA COSA ANCHE CON I COLORI */?>
+                    </li>
+                </ul>
+                    <form>
+                        <ul>
                         <li>
-                            <label>Taglia:</label>
-                            <select required name="taglia">
-                                <?php foreach($templateParams["taglie"] as $taglia): ?>
-                                    <option value="<?php echo toTag($taglia["taglia"])?>"><?php echo $taglia["taglia"]?></option>
-                                <?php endforeach; ?>
-                            </select>
+                            <label for="quantity">Quantità:</label>
+                            <input required type="quantity" name="quantità" min="1" max="<?php echo $maglia["dispMagazzino"]?>"/>
+                            <p>(ne sono rimaste solo <?php echo $maglia["dispMagazzino"]?>)</p>
                         </li>
                         <li>
-                            <label>Quantità:</label>
-                            <input required type="number" name="quantità" min="1"/>
+                            <label for="name">Nome(+5€):</label>
+                            <input type="name" id="nomePersonalizzato" name="nomePersonalizzato"/>
                         </li>
                         <li>
-                            <label>Nome(+5€):</label>
-                            <input type="text" id="nomePersonalizzato" name="nomePersonalizzato"/>
-                        </li>
-                        <li>
-                            <label>Numero(+5€):</label>
+                            <label for="number">Numero(+5€):</label>
                             <input type="number" name="numeroPersonalizzato" min="1" max="99"/>
                         </li>
                         <li>
-                            <input type="submit" value="Aggiungi al carrello"/>
+                            <?php if($maglia["dispMagazzino"] <= 0): ?>
+                                <p>In questo momento la maglia non è disponibile!</p>
+                                <input type="submit" value="Aggiungi al carrello" disabled/>
+                            <?php else: ?>
+                                <input type="submit" value="Aggiungi al carrello"/>
+                            <?php endif; ?>
                         </li>
-                    </ul>
+                        </ul>
+                        </form>
+                    
                     </fieldset>
-                </form>
+                
             </section>
             <section>
                 <h2>Descrizione prodotto:</h2>

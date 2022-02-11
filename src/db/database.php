@@ -105,11 +105,20 @@ class DatabaseHelper{
     }
 
     public function getProductById($id){
-        $stmt = $this->db->prepare("SELECT immagineFronte, immagineRetro, modello.nome as modello, modello.descrizione as descrizione, colore.nome as colore, genere.nome as genere, prezzo, taglia, idMaglia, dispMagazzino
+        $stmt = $this->db->prepare("SELECT immagineFronte, immagineRetro, modello.idModello as idModello, modello.nome as modello, modello.descrizione as descrizione, colore.nome as colore, colore.idColore as idColore, genere.nome as genere, genere.idGenere as idGenere, prezzo, taglia, idMaglia, dispMagazzino
             FROM maglia, modello, genere, colore WHERE maglia.idModello = modello.idModello AND
             maglia.idColore = colore.idColore AND maglia.idGenere = genere.idGenere AND
             maglia.idMaglia=?");
         $stmt->bind_param("i", $id);
+        $stmt->execute();
+        $result = $stmt->get_result();
+
+        return $result->fetch_all(MYSQLI_ASSOC);
+    }
+
+    public function getProductBySize($genere, $colore, $modello, $taglia) {
+        $stmt = $this->db->prepare("SELECT idMaglia FROM maglia WHERE idGenere = ? AND idColore = ? AND idModello = ? AND taglia = ?");
+        $stmt->bind_param("iiii", $genere, $colore, $modello, $taglia);
         $stmt->execute();
         $result = $stmt->get_result();
 
