@@ -1,4 +1,5 @@
-			<section>
+            <?php require("credenziali.php") ?>
+            <section>
                 <h2>I miei ordini</h2>
                 <?php foreach($templateParams["ordini"] as $ordine): ?>
                     <div>
@@ -9,9 +10,9 @@
                                 <tr>
                                     <th id="maglia_<?php echo $ordine["idOrdine"]; ?>">Maglia</th>
                                     <th id="taglia_<?php echo $ordine["idOrdine"]; ?>">Taglia</th>
-                                    <th id="scritta_<?php echo $ordine["idOrdine"]; ?>">Scritta</th>
-                                    <th id="numero_<?php echo $ordine["idOrdine"]; ?>">Numero</th>
-                                    <th id="quantità_<?php echo $ordine["idOrdine"]; ?>">Quantità</th>
+                                    <th id="scritta_<?php echo $ordine["idOrdine"]; ?>">Nome</th>
+                                    <th id="numero_<?php echo $ordine["idOrdine"]; ?>">Num.</th>
+                                    <th id="quantità_<?php echo $ordine["idOrdine"]; ?>">Qt</th>
                                     <th id="costo_<?php echo $ordine["idOrdine"]; ?>">Costo</th>
                                 </tr>
                             </thead>
@@ -49,4 +50,3 @@
                     </div>
                 <?php endforeach; ?>
             </section>
-            <?php require("credenziali.php") ?>
