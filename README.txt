@@ -1,11 +1,9 @@
 Progetto di Web
 
-Elenco obiettivi:
-pagine html: prodotti, carrello, admin
-riorganizzare main (bottoni, immagini cliccabili, ecc..)
-gestire account (pagina amministratore)
-completare css
-jquery (prodotti consigliati, ricerca prodotti con filtri) 
-database
-php
-notifiche
+Aprire XAMPP
+Avviare apache e MySQL
+Aprire la pagina localhost/phpmyadmin
+Creare il database grazie a creazioneDatabase.txt
+Inserire i dati con datiDatabase.txt
+In C:\xampp\htdocs creare la cartella ProgettoWeb e copiaci il contenuto della cartella ProgettoWeb
+Navigando all'indirizzo: localhost/ProgettoWeb/src/index.php potrai visitare il sito UnisHirt!
