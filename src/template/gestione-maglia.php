@@ -35,8 +35,8 @@
                     <p> <?php echo $maglia["modello"] ?> </p>
                     <?php else: 
                         foreach($dbh->getModels() as $model): ?>
-                        <input required type="radio" id="<?php echo $model["idModello"]; ?>" value="<?php echo $model["idModello"]; ?>" name="modello" />
-                        <label for="<?php echo $model["idModello"]; ?>"><?php echo $model["nome"]; ?></label>
+                        <input required type="radio" id="modello_<?php echo $model["idModello"]; ?>" value="<?php echo $model["idModello"]; ?>" name="modello" />
+                        <label for="modello_<?php echo $model["idModello"]; ?>"><?php echo $model["nome"]; ?></label>
                     <?php endforeach;
                     endif; ?>
                 </li>
@@ -45,8 +45,8 @@
                     <p> <?php echo $maglia["colore"] ?> </p>
                     <?php else: 
                         foreach($dbh->getColors() as $color): ?>
-                        <input required type="radio" id="<?php echo $color["idColore"]; ?>" value="<?php echo $color["idColore"]; ?>" name="colore" />
-                        <label for="<?php echo $color["idColore"]; ?>"><?php echo $color["nome"]; ?></label>
+                        <input required type="radio" id="colore_<?php echo $color["idColore"]; ?>" value="<?php echo $color["idColore"]; ?>" name="colore" />
+                        <label for="colore_<?php echo $color["idColore"]; ?>"><?php echo $color["nome"]; ?></label>
                     <?php endforeach;
                     endif; ?>
                 </li>
@@ -55,8 +55,8 @@
                     <p> <?php echo $maglia["genere"] ?> </p>
                     <?php else: 
                         foreach($dbh->getGenders() as $gender): ?>
-                        <input required type="radio" id="<?php echo $gender["idGenere"]; ?>" value="<?php echo $gender["idGenere"]; ?>" name="genere" />
-                        <label for="<?php echo $gender["idGenere"]; ?>"><?php echo $gender["nome"]; ?></label>
+                        <input required type="radio" id="genere_<?php echo $gender["idGenere"]; ?>" value="<?php echo $gender["idGenere"]; ?>" name="genere" />
+                        <label for="genere_<?php echo $gender["idGenere"]; ?>"><?php echo $gender["nome"]; ?></label>
                     <?php endforeach;
                     endif; ?>
                 </li>

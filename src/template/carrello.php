@@ -21,24 +21,24 @@
                     <tbody>
                         <?php foreach($templateParams["maglie"] as $maglia): ?>
                         <tr>
-                            <td header="maglia">
+                            <td headers="maglia">
                                 <a href="singolo-prodotto.php?idMaglia=<?php echo $maglia["idMaglia"]; ?>">
                                     <img src="<?php echo $IMG_DIR.$maglia["immagineFronte"]; ?>" alt="<?php echo $maglia["immagineFronte"]; ?>">
                                 </a>
                             </td>
-                            <td header="taglia">
+                            <td headers="taglia">
                                 <?php echo $maglia["taglia"]; ?>
                             </td>
-                            <td header="scritta">
+                            <td headers="scritta">
                                 <?php echo $maglia["nomePersonalizzato"]; ?>
                             </td>
-                            <td header="numero">
+                            <td headers="numero">
                                 <?php echo $maglia["numeroPersonalizzato"]; ?>
                             </td>
-                            <td header="quantità">
+                            <td headers="quantità">
                                 <?php echo $maglia["quantità"]; ?>
                             </td>
-                            <td header="costo">
+                            <td headers="costo">
                                 <?php echo $maglia["costo"]; ?>
                             </td>
                             <td>
@@ -48,18 +48,19 @@
                         <?php endforeach; ?>
                         <tr>
                             <th id="totale">Totale:</th>
-                            <td colspan=6 header="totale"><?php echo totalCart($templateParams["maglie"]) ?></td>
+                            <td colspan=6 headers="totale"><?php echo totalCart($templateParams["maglie"]) ?></td>
                         </tr>
                     </tbody>
                     </table>
                 <?php endif; ?>
             </section>
             <section>
+                <h2>Pagamento</h2>
                 <?php if(isset($templateParams["messaggio"])): ?>
                     <p><?php echo $templateParams["messaggio"]; ?></p>
                 <?php endif; ?>
-                <form action="" method="POST">
-                    <fieldset>Pagamento
+                <form method="POST">
+                    <fieldset>Dati carta di credito
                     <ul>
                         <li>
                             <label for="nomePagamento">Nome:</label>

@@ -3,10 +3,10 @@
                 <?php if(isset($_SESSION["email"])): ?>
                     <p>Email: <?php echo $_SESSION["email"]; ?></p>
                 <?php endif; ?>
-                <form action="" method="POST">
+                <form method="POST">
                     <input type="submit" name="logout" value="Logout" /> 
                 </form>
-                <form action="" method="POST">
+                <form method="POST">
                     <fieldset><legend>Cambia password:</legend>
                     <ul>
                         <li>
