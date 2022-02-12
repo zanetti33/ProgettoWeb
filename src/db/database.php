@@ -303,7 +303,7 @@ class DatabaseHelper{
             $totale += $maglia["costo"];
         }
         //inserimento ordine
-        $stato = "Pagamento eseguito";
+        $stato = "Ordine confermato, consegna prevista al Campus entro 5 giorni lavorativi!";
         $query = "INSERT INTO ordine (email, dataPagamento, stato, totale) 
             VALUES (?, CURRENT_TIMESTAMP(), ?, ?)";
         $stmt = $this->db->prepare($query);

@@ -46,7 +46,7 @@ CREATE TABLE Ordine(
     idOrdine int PRIMARY KEY AUTO_INCREMENT,
     email varchar(50) NOT NULL,
     dataPagamento datetime NOT NULL,
-    stato varchar(30) NOT NULL,
+    stato varchar(100) NOT NULL,
     totale float(7,2) NOT NULL,
     FOREIGN KEY (email) REFERENCES Account(email)
 );
