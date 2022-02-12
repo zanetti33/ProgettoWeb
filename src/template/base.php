@@ -34,22 +34,25 @@
     }
     ?>
     <main>
-    <?php
-    if(isset($templateParams["nome"])){
-        require($templateParams["nome"]);
-    }
-	if(isset($templateParams["nome"]) && $templateParams["nome"] == "home.php"): ?>
-		<section>
-                <h2>Prodotti Popolari</h2>
-                <img src="./img/back.png" alt="precedente"/>
-                <div>
-                <?php foreach($templateParams["consigliati"] as $maglia): ?>
-                    <img src="<?php echo $IMG_DIR.$maglia["immagineFronte"]; ?>" alt="<?php echo $maglia["idMaglia"]; ?>">
-                <?php endforeach; ?>
-                </div>
-                <img src="./img/next.png" alt="prossima"/>
-        </section>
+    <?php if(isset($templateParams["nome"]) && $templateParams["nome"] == "home.php"): ?>
+            <section>
+                    <h2>Prodotti Popolari</h2>
+                    <div>
+                        <img src="<?php echo $IMG_DIR?>back.png" alt="precedente"/>
+                    </div>
+                    <div>
+                    <?php foreach($templateParams["consigliati"] as $maglia): ?>
+                        <img src="<?php echo $IMG_DIR.$maglia["immagineFronte"]; ?>" alt="<?php echo $maglia["idMaglia"]; ?>">
+                    <?php endforeach; ?>
+                    </div>
+                    <div>
+                        <img src="<?php echo $IMG_DIR?>next.png" alt="prossima"/>
+                    </div>
+            </section>
     <?php endif ?>
+    <?php if(isset($templateParams["nome"])){
+        require($templateParams["nome"]);
+    }?>
     </main>
 	<footer>
 		<?php require("contatti.php") ?>

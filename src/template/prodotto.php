@@ -1,10 +1,16 @@
 <?php $maglia = $templateParams["maglia"]; ?>
     <section>
         <div>
+            <img src="<?php echo $IMG_DIR?>back.png" alt="precedente"/>
+        </div>
+        <div>
             <img src="<?php echo $IMG_DIR.$maglia["immagineFronte"]; ?>" alt="<?php echo $maglia["immagineFronte"]; ?>">
         </div>
         <div>
             <img src="<?php echo $IMG_DIR.$maglia["immagineRetro"]; ?>" alt="<?php echo $maglia["immagineRetro"]; ?>">
+        </div>
+        <div>
+            <img src="<?php echo $IMG_DIR?>next.png" alt="prossima"/>
         </div>
             <fieldset><legend>Personalizza:</legend>
                 <ul>

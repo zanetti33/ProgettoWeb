@@ -40,7 +40,7 @@ header li {
     display: inline-block;
 }
 
-header img, main section > img {
+header img, main section > div > img:first-of-type, main section > div > img:last-of-type {
     max-width: 35px;
     max-height: 35px;
     border-radius: 5px;
@@ -60,7 +60,7 @@ main > p {
     font-size: 1.5em;
 }
 
-main section > img {
+main section > div > img:first-of-type, main section > div > img:first-of-type{
     background-color: rgb(0, 127, 225);
 }
 
@@ -111,7 +111,7 @@ header img:first-of-type{
     margin-left: 5%;
 }
 
-main section > img:hover {
+main section > div > img:hover {
     background-color: rgb(0, 0, 255);
 }
 
@@ -238,7 +238,7 @@ form input[type="number"]{
         justify-content: space-between;
     }
 
-    main section img{
+    main section div img{
         max-height: 300px;
     }
 

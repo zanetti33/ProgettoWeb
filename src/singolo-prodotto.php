@@ -7,6 +7,7 @@ $templateParams["nome"] = "prodotto.php";
 //Home Template
 
 $templateParams["taglie"] = $dbh->getSizes();
+$templateParams["js"] = array("js/jquery-1.11.3.min.js","js/singolo-prodotto.js");
 
 $id = 1;
 if(isset($_GET["idMaglia"])){
