@@ -38,4 +38,10 @@ $(document).ready(function(){
                 .addClass("shown");
         }
     });
+
+    //funzionamento click di un'immagine (non funziona sul mio chrome :C)
+    $("main > section:last-child > div > img").click(function() {
+        var $id = $(this).attr("alt");
+        window.location = `singolo-prodotto.php?idMaglia=${$id}`;
+    });
 });

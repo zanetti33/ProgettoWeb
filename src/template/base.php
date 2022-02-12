@@ -44,7 +44,7 @@
                 <img src="./img/back.png" alt="precedente"/>
                 <div>
                 <?php foreach($templateParams["consigliati"] as $maglia): ?>
-                    <img src="<?php echo $IMG_DIR.$maglia["immagineFronte"]; ?>" alt="<?php echo $maglia["immagineFronte"]; ?>">
+                    <img src="<?php echo $IMG_DIR.$maglia["immagineFronte"]; ?>" alt="<?php echo $maglia["idMaglia"]; ?>">
                 <?php endforeach; ?>
                 </div>
                 <img src="./img/next.png" alt="prossima"/>
