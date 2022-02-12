@@ -3,15 +3,15 @@
                 <?php if(isset($templateParams["messaggio"])): ?>
                     <p><?php echo $templateParams["messaggio"]; ?></p>
                 <?php endif; ?>
-                <form action="" method="POST">
+                <form method="POST">
                     <fieldset>
                     <ul>
                         <li>
-                            <label for="email">Email:</label></br>
+                            <label for="email">Email:</label><br/>
                             <input required type="text" id="email" name="email" />
                         </li>
                         <li>
-                            <label for="password">Password:</label></br>
+                            <label for="password">Password:</label><br/>
                             <input required type="password" id="password" name="password" />
                         </li>
                         <li>

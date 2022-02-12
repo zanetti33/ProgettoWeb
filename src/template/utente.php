@@ -7,42 +7,42 @@
                         <table>
                             <thead>
                                 <tr>
-                                    <th id="maglia">Maglia</th>
-                                    <th id="taglia">Taglia</th>
-                                    <th id="scritta">Scritta</th>
-                                    <th id="numero">Numero</th>
-                                    <th id="quantità">Quantità</th>
-                                    <th id="costo">Costo</th>
+                                    <th id="maglia_<?php echo $ordine["idOrdine"]; ?>">Maglia</th>
+                                    <th id="taglia_<?php echo $ordine["idOrdine"]; ?>">Taglia</th>
+                                    <th id="scritta_<?php echo $ordine["idOrdine"]; ?>">Scritta</th>
+                                    <th id="numero_<?php echo $ordine["idOrdine"]; ?>">Numero</th>
+                                    <th id="quantità_<?php echo $ordine["idOrdine"]; ?>">Quantità</th>
+                                    <th id="costo_<?php echo $ordine["idOrdine"]; ?>">Costo</th>
                                 </tr>
                             </thead>
                             <tbody>
                                 <?php foreach($dbh->getProductsInOrder($ordine["idOrdine"]) as $product): ?>
                                 <tr>
-                                    <td header="maglia">
+                                    <td headers="maglia_<?php echo $ordine["idOrdine"]; ?>">
                                         <a href="singolo-prodotto.php?idMaglia=<?php echo $product["idMaglia"]; ?>">
                                             <img src="<?php echo $IMG_DIR.$product["immagineFronte"]; ?>" alt="<?php echo $product["immagineFronte"]; ?>">
                                         </a>
                                     </td>
-                                    <td header="taglia">
+                                    <td headers="taglia_<?php echo $ordine["idOrdine"]; ?>">
                                         <?php echo $product["taglia"]; ?>
                                     </td>
-                                    <td header="scritta">
+                                    <td headers="scritta_<?php echo $ordine["idOrdine"]; ?>">
                                         <?php echo $product["nomePersonalizzato"]; ?>
                                     </td>
-                                    <td header="numero">
+                                    <td headers="numero_<?php echo $ordine["idOrdine"]; ?>">
                                         <?php echo $product["numeroPersonalizzato"]; ?>
                                     </td>
-                                    <td header="quantità">
+                                    <td headers="quantità_<?php echo $ordine["idOrdine"]; ?>">
                                         <?php echo $product["quantità"]; ?>
                                     </td>
-                                    <td header="costo">
+                                    <td headers="costo_<?php echo $ordine["idOrdine"]; ?>">
                                         <?php echo $product["costo"]; ?>
                                     </td>
                                 </tr>
                                 <?php endforeach; ?>
                                 <tr>
-                                    <th id="totale">Totale:</th>
-                                    <td colspan=5 header="totale"><?php echo $ordine["totale"]; ?></td>
+                                    <th id="totale_<?php echo $ordine["idOrdine"]; ?>">Totale:</th>
+                                    <td colspan=5 headers="totale_<?php echo $ordine["idOrdine"]; ?>"><?php echo $ordine["totale"]; ?></td>
                                 </tr>
                             </tbody>
                         </table>

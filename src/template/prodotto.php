@@ -13,7 +13,7 @@
                     </li>
                     <li>
                         <label for="taglia">Seleziona un'altra taglia:</label>
-                        <form action="" method="POST">
+                        <form method="POST">
                         <ul>
                             <?php foreach($templateParams["taglie"] as $taglia): ?>
                                 <?php if($taglia["taglia"] != $maglia["taglia"]): ?>
@@ -36,7 +36,7 @@
                     </li>
                     <li>
                         <label for="colore">Seleziona un altro colore disponibile per lo stesso modello:</label>
-                        <form action="" method="POST">
+                        <form method="POST">
                         <ul>
                             <?php foreach($templateParams["colori"] as $colore): ?>
                                 <?php if($colore["idColore"] != $maglia["idColore"]): ?>
