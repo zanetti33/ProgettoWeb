@@ -30,7 +30,7 @@ if(isset($_POST["acquista"])){
             $result1 = $dbh->stock($id);
             $n = $dbh->numberOfProductInCart($id, $_SESSION["email"]);
             if(count($result1) == 0){
-                $msg = "maglie non trovate nel db";
+                $msg = "Maglie non trovate nel db";
                 break;
             } else {
                 $disp = $result1[0]["dispMagazzino"];
@@ -46,9 +46,9 @@ if(isset($_POST["acquista"])){
             //eseguo l'ordine
             $error = $dbh->executeOrder($_SESSION["email"]);
             if($error){
-                $msg = "errore nel pagamento!";
+                $msg = "Errore nel pagamento!";
             }else{
-                $msg = "acquisto completato con successo!";
+                $msg = "Acquisto completato con successo!";
             }
         }
     }

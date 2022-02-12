@@ -16,12 +16,13 @@ foreach ($templateParams["generi"] as $genere) {
     }
 }
 
-$colore = 2;
+$colore = 0;
 if(isset($_GET["colore"])){
     $colore = $_GET["colore"];
-}
-if($colore > count($templateParams["colori"])) {
-
+    if($colore > count($templateParams["colori"]) || $colore <= 0) {
+        //Errore nell'id passato in GET
+        $colore = 0;
+    }
 }
 
 $templateParams["maglieFiltrate"] = $dbh->getFilteredShirts($generi, $colore);

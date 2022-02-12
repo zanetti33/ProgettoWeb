@@ -74,13 +74,3 @@ CREATE TABLE Maglia_ordinata(
     FOREIGN KEY (idMaglia) REFERENCES Maglia(idMaglia),
     FOREIGN KEY (idOrdine) REFERENCES Ordine(idOrdine)
 );
-
-CREATE TABLE Notifica(
-    codNotifica int PRIMARY KEY AUTO_INCREMENT,
-    email varchar(50) NOT NULL,
-    titolo varchar(40) NOT NULL,
-    descrizione varchar(500) NOT NULL,
-    dataeora datetime NOT NULL,
-    visualizzato boolean NOT NULL DEFAULT '0',
-    FOREIGN KEY (email) REFERENCES Account(email)
-);

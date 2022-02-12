@@ -80,7 +80,7 @@
                             <tr>
                                 <th id="<?php echo $maglia["idMaglia"]; ?>" headers="id"><?php echo $maglia["idMaglia"]; ?></th>
                                 <td headers="<?php echo $maglia["idMaglia"]; ?> quantità_magazzino"><?php echo $maglia["dispMagazzino"]; ?></td>
-                                <td headers="<?php echo $maglia["idMaglia"]; ?> immagine"><img src="<?php echo UPLOAD_DIR.$maglia["immagineFronte"]; ?>" alt="" /></td>
+                                <td headers="<?php echo $maglia["idMaglia"]; ?> immagine"><img src="<?php echo $IMG_DIR.$maglia["immagineFronte"]; ?>" alt="" /></td>
                                 <td headers="<?php echo $maglia["idMaglia"]; ?> azioni">
                                     <a href="gestisci-prodotto.php?action=2&id=<?php echo $maglia["idMaglia"]; ?>"> Modifica </a>
                                     <a href="gestisci-prodotto.php?action=3&id=<?php echo $maglia["idMaglia"]; ?>"> Cancella </a>
