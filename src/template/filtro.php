@@ -10,6 +10,7 @@
             <li>
                 <label>Colore</label>
                 <select name="colore">
+                    <option value="0">Nessuno</option>
                     <?php foreach($templateParams["colori"] as $colore): ?>
                         <option value="<?php echo $colore["idColore"]?>"><?php echo $colore["nome"]?></option>
                     <?php endforeach; ?>

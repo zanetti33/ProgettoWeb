@@ -63,7 +63,7 @@ if($_POST["action"]==2){
     if($result == 1){
         $msg = "Modifica completata correttamente!";
     } else {
-        $msg = "non c'è stata alcuna modifica! potrebbe esserci stato un errore...";
+        $msg = "Non c'è stata alcuna modifica! potrebbe esserci stato un errore...";
     }
     header("location: login.php?formmsg=".$msg);
 }
@@ -74,7 +74,7 @@ if($_POST["action"]==3){
     if($result == 1){
         $msg = "Cancellazione completata correttamente!";
     } else {
-        $msg = "errore nella cancellazione!";
+        $msg = "Errore nella cancellazione!";
     }
     header("location: login.php?formmsg=".$msg);
 }
