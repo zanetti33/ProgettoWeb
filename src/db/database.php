@@ -86,7 +86,7 @@ class DatabaseHelper{
     }
 
     public function getOrdersOfUser($email){
-        $stmt = $this->db->prepare("SELECT dataPagamento, stato, totale, idOrdine FROM ordine WHERE email=?");
+        $stmt = $this->db->prepare("SELECT dataPagamento, stato, totale, idOrdine FROM ordine WHERE email=? ORDER BY dataPagamento DESC");
         $stmt->bind_param("s", $email);
         $stmt->execute();
         $result = $stmt->get_result();
@@ -249,21 +249,21 @@ class DatabaseHelper{
     }
 
     public function stock($id){
-        $query = "SELECT dispMagazzino FROM maglia WHERE idMaglia=?";
+        $query = "SELECT dispMagazzino FROM maglia WHERE idMaglia = ? ";
         $stmt = $this->db->prepare($query);
         $stmt->bind_param('i', $id);
         $stmt->execute();
-        $result = $stmt->getResult();
+        $result = $stmt->get_result();
 
         return $result->fetch_all(MYSQLI_ASSOC);
     }
 
     public function numberOfProductInCart($id, $email){
-        $query = "SELECT quantità FROM maglia_in_ordine WHERE idMaglia=? AND email=?";
+        $query = "SELECT quantità FROM maglia_in_carrello WHERE idMaglia = ? AND email = ?";
         $stmt = $this->db->prepare($query);
         $stmt->bind_param('is', $id, $email);
         $stmt->execute();
-        $result = $stmt->getResult();
+        $result = $stmt->get_result();
 
         $tot = 0;
         foreach($result as $value){
@@ -275,11 +275,17 @@ class DatabaseHelper{
 
     public function executeOrder($email){
         $error = false;
+        $maglie = $this->getProductsInCart($email);
+        $totale = 0.0;
+        foreach($maglie as $maglia){
+            $totale += $maglia["costo"];
+        }
         //inserimento ordine
+        $stato = "Pagamento eseguito";
         $query = "INSERT INTO ordine (email, dataPagamento, stato, totale) 
             VALUES (?, CURRENT_TIMESTAMP(), ?, ?)";
         $stmt = $this->db->prepare($query);
-        $stmt->bind_param('ssi', $email, $stato, $totale);
+        $stmt->bind_param('ssd', $email, $stato, $totale);
         $stmt->execute();
 
         $idOrder = $stmt->insert_id;
@@ -287,21 +293,30 @@ class DatabaseHelper{
             return true;
         }
 
-        //inserimento delle maglie nell'ordine
+        //inserimento delle maglie nell'ordine, diminuzione scorte e aumento vendite
         $query = "INSERT INTO maglia_ordinata (idMaglia, idOrdine, quantità, nomePersonalizzato, numeroPersonalizzato, costo) 
             VALUES (?, ?, ?, ?, ?, ?)";
-        $maglie = $this->getProductsInCart($email);
+        $query2 = "UPDATE maglia SET dispMagazzino = dispMagazzino - ?, vendite = vendite + ? WHERE idMaglia = ?";
+        
         if(count($maglie) == 0){
             return true;
         }
         foreach($maglie as $maglia){
+            //la metto nell'ordine
             $stmt = $this->db->prepare($query);
-            $stmt->bind_param('iiisii', $maglia["idMaglia"], $idOrder,
+            $stmt->bind_param('iiisid', $maglia["idMaglia"], $idOrder,
                 $maglia["quantità"], $maglia["nomePersonalizzato"],
                 $maglia["numeroPersonalizzato"], $maglia["costo"]);
             $stmt->execute();
             $id = $stmt->insert_id;
             if(!($idOrder>0)){
+                return true;
+            }
+            //la tolgo dal magazzino
+            $stmt = $this->db->prepare($query2);
+            $stmt->bind_param('iii', $maglia["quantità"], $maglia["quantità"], $maglia["idMaglia"]);
+            $stmt->execute();
+            if($stmt->affected_rows!=1){
                 return true;
             }
         }

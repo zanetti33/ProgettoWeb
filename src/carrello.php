@@ -35,7 +35,8 @@ if(isset($_POST["acquista"])){
             } else {
                 $disp = $result1[0]["dispMagazzino"];
                 if($disp < $n){
-                    $magliaNonDisponibile = $dbh->getProductById($id);
+                    $magliaNonDisponibile = $dbh->getProductById($id)[0];
+                    $msg = $magliaNonDisponibile["modello"]." ".$magliaNonDisponibile["colore"]." ".$magliaNonDisponibile["genere"]." ".$magliaNonDisponibile["taglia"]." non è più disponibile in quella quantità!";
                     $ok = false;
                     break;
                 }
@@ -43,14 +44,12 @@ if(isset($_POST["acquista"])){
         }
         if($ok){
             //eseguo l'ordine
-            $result = $dbh->executeOrder($email);
-            if($result){
+            $error = $dbh->executeOrder($_SESSION["email"]);
+            if($error){
                 $msg = "errore nel pagamento!";
             }else{
                 $msg = "acquisto completato con successo!";
             }
-        }else{
-            $msg = $magliaNonDisponibile["modello"].$magliaNonDisponibile["colore"].$magliaNonDisponibile["genere"].$magliaNonDisponibile["taglia"]."non è più disponibile in quella quantità!";
         }
     }
     $templateParams["messaggio"] = $msg;
