@@ -36,7 +36,7 @@ if(isset($_POST["acquista"])){
                 $disp = $result1[0]["dispMagazzino"];
                 if($disp < $n){
                     $magliaNonDisponibile = $dbh->getProductById($id)[0];
-                    $msg = $magliaNonDisponibile["modello"]." ".$magliaNonDisponibile["colore"]." ".$magliaNonDisponibile["genere"]." ".$magliaNonDisponibile["taglia"]." non è più disponibile in quella quantità!";
+                    $msg = $magliaNonDisponibile["modello"]." ".$magliaNonDisponibile["colore"]." ".$magliaNonDisponibile["genere"]." ".$magliaNonDisponibile["taglia"]." Non è più disponibile in quella quantità!";
                     $ok = false;
                     break;
                 }

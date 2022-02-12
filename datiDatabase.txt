@@ -116,7 +116,7 @@ INSERT INTO maglia (idModello, idColore, idGenere, taglia, dispMagazzino, prezzo
 ("3", "2", "2", "XS", "100", "25.99", "Maglia-Bianco-Nero-03-U-D-B-Fronte.jpeg", "Maglia-Bianco-Nero-03-U-D-B-Retro.jpeg"),
 ("3", "2", "2", "S", "100", "25.99", "Maglia-Bianco-Nero-03-U-D-B-Fronte.jpeg", "Maglia-Bianco-Nero-03-U-D-B-Retro.jpeg"),
 ("3", "2", "2", "M", "100", "25.99", "Maglia-Bianco-Nero-03-U-D-B-Fronte.jpeg", "Maglia-Bianco-Nero-03-U-D-B-Retro.jpeg"),
-("3", "2", "2", "L", "100", "25.99", "Maglia-Bianco-Nero-03-U-D-B-Fronte.jpeg", "Maglia-Bianco-Nero-03-U-D-B-Retro.jpeg"),
+("3", "2", "2", "L", "50", "25.99", "Maglia-Bianco-Nero-03-U-D-B-Fronte.jpeg", "Maglia-Bianco-Nero-03-U-D-B-Retro.jpeg"),
 ("3", "2", "2", "XL", "100", "25.99", "Maglia-Bianco-Nero-03-U-D-B-Fronte.jpeg", "Maglia-Bianco-Nero-03-U-D-B-Retro.jpeg"),
 ("3", "2", "3", "XS", "100", "25.99", "Maglia-Bianco-Nero-03-U-D-B-Fronte.jpeg", "Maglia-Bianco-Nero-03-U-D-B-Retro.jpeg"),
 ("3", "2", "3", "S", "100", "25.99", "Maglia-Bianco-Nero-03-U-D-B-Fronte.jpeg", "Maglia-Bianco-Nero-03-U-D-B-Retro.jpeg"),
@@ -150,7 +150,7 @@ INSERT INTO maglia (idModello, idColore, idGenere, taglia, dispMagazzino, prezzo
 ("1", "3", "2", "M", "100", "19.99", "Maglia-Blu-01-U-D-B-Fronte.jpeg", "Maglia-Blu-01-U-D-B-Retro.jpeg"),
 ("1", "3", "2", "L", "100", "19.99", "Maglia-Blu-01-U-D-B-Fronte.jpeg", "Maglia-Blu-01-U-D-B-Retro.jpeg"),
 ("1", "3", "2", "XL", "100", "19.99", "Maglia-Blu-01-U-D-B-Fronte.jpeg", "Maglia-Blu-01-U-D-B-Retro.jpeg"),
-("1", "3", "3", "XS", "100", "19.99", "Maglia-Blu-01-U-D-B-Fronte.jpeg", "Maglia-Blu-01-U-D-B-Retro.jpeg"),
+("1", "3", "3", "XS", "25", "19.99", "Maglia-Blu-01-U-D-B-Fronte.jpeg", "Maglia-Blu-01-U-D-B-Retro.jpeg"),
 ("1", "3", "3", "S", "100", "19.99", "Maglia-Blu-01-U-D-B-Fronte.jpeg", "Maglia-Blu-01-U-D-B-Retro.jpeg"),
 ("1", "3", "3", "M", "100", "19.99", "Maglia-Blu-01-U-D-B-Fronte.jpeg", "Maglia-Blu-01-U-D-B-Retro.jpeg"),
 ("1", "3", "3", "L", "100", "19.99", "Maglia-Blu-01-U-D-B-Fronte.jpeg", "Maglia-Blu-01-U-D-B-Retro.jpeg"),
@@ -184,7 +184,7 @@ INSERT INTO maglia (idModello, idColore, idGenere, taglia, dispMagazzino, prezzo
 ("3", "3", "2", "XL", "100", "25.99", "Maglia-Blu-Bianco-03-U-D-B-Fronte.jpeg", "Maglia-Blu-Bianco-03-U-D-B-Retro.jpeg"),
 ("3", "3", "3", "XS", "100", "25.99", "Maglia-Blu-Bianco-03-U-D-B-Fronte.jpeg", "Maglia-Blu-Bianco-03-U-D-B-Retro.jpeg"),
 ("3", "3", "3", "S", "100", "25.99", "Maglia-Blu-Bianco-03-U-D-B-Fronte.jpeg", "Maglia-Blu-Bianco-03-U-D-B-Retro.jpeg"),
-("3", "3", "3", "M", "100", "25.99", "Maglia-Blu-Bianco-03-U-D-B-Fronte.jpeg", "Maglia-Blu-Bianco-03-U-D-B-Retro.jpeg"),
+("3", "3", "3", "M", "34", "25.99", "Maglia-Blu-Bianco-03-U-D-B-Fronte.jpeg", "Maglia-Blu-Bianco-03-U-D-B-Retro.jpeg"),
 ("3", "3", "3", "L", "100", "25.99", "Maglia-Blu-Bianco-03-U-D-B-Fronte.jpeg", "Maglia-Blu-Bianco-03-U-D-B-Retro.jpeg"),
 ("3", "3", "3", "XL", "100", "25.99", "Maglia-Blu-Bianco-03-U-D-B-Fronte.jpeg", "Maglia-Blu-Bianco-03-U-D-B-Retro.jpeg"),
 
@@ -200,7 +200,7 @@ INSERT INTO maglia (idModello, idColore, idGenere, taglia, dispMagazzino, prezzo
 ("4", "3", "2", "XL", "100", "29.99", "Maglia-Blu-04-U-D-B-Fronte.jpeg", "Maglia-Blu-04-U-D-B-Retro.jpeg"),
 ("4", "3", "3", "XS", "100", "29.99", "Maglia-Blu-04-U-D-B-Fronte.jpeg", "Maglia-Blu-04-U-D-B-Retro.jpeg"),
 ("4", "3", "3", "S", "100", "29.99", "Maglia-Blu-04-U-D-B-Fronte.jpeg", "Maglia-Blu-04-U-D-B-Retro.jpeg"),
-("4", "3", "3", "M", "100", "29.99", "Maglia-Blu-04-U-D-B-Fronte.jpeg", "Maglia-Blu-04-U-D-B-Retro.jpeg"),
+("4", "3", "3", "M", "75", "29.99", "Maglia-Blu-04-U-D-B-Fronte.jpeg", "Maglia-Blu-04-U-D-B-Retro.jpeg"),
 ("4", "3", "3", "L", "100", "29.99", "Maglia-Blu-04-U-D-B-Fronte.jpeg", "Maglia-Blu-04-U-D-B-Retro.jpeg"),
 ("4", "3", "3", "XL", "100", "29.99", "Maglia-Blu-04-U-D-B-Fronte.jpeg", "Maglia-Blu-04-U-D-B-Retro.jpeg"),
 
@@ -242,7 +242,7 @@ INSERT INTO maglia (idModello, idColore, idGenere, taglia, dispMagazzino, prezzo
 
 ("3", "5", "1", "XS", "100", "25.99", "Maglia-Nero-Bianco-03-U-Fronte.jpeg", "Maglia-Nero-Bianco-03-U-Retro.jpeg"),
 ("3", "5", "1", "S", "100", "25.99", "Maglia-Nero-Bianco-03-U-Fronte.jpeg", "Maglia-Nero-Bianco-03-U-Retro.jpeg"),
-("3", "5", "1", "M", "100", "25.99", "Maglia-Nero-Bianco-03-U-Fronte.jpeg", "Maglia-Nero-Bianco-03-U-Retro.jpeg"),
+("3", "5", "1", "M", "85", "25.99", "Maglia-Nero-Bianco-03-U-Fronte.jpeg", "Maglia-Nero-Bianco-03-U-Retro.jpeg"),
 ("3", "5", "1", "L", "100", "25.99", "Maglia-Nero-Bianco-03-U-Fronte.jpeg", "Maglia-Nero-Bianco-03-UB-Retro.jpeg"),
 ("3", "5", "1", "XL", "100", "25.99", "Maglia-Nero-Bianco-03-U-Fronte.jpeg", "Maglia-Nero-Bianco-03-U-Retro.jpeg"),
 
@@ -256,7 +256,7 @@ INSERT INTO maglia (idModello, idColore, idGenere, taglia, dispMagazzino, prezzo
 ("1", "6", "2", "S", "100", "19.99", "Maglia-Rosa-01-D-B-Fronte.jpeg", "Maglia-Rosa-01-D-B-Retro.jpeg"),
 ("1", "6", "2", "M", "100", "19.99", "Maglia-Rosa-01-D-B-Fronte.jpeg", "Maglia-Rosa-01-D-B-Retro.jpeg"),
 ("1", "6", "2", "L", "100", "19.99", "Maglia-Rosa-01-D-B-Fronte.jpeg", "Maglia-Rosa-01-D-B-Retro.jpeg"),
-("1", "6", "2", "XL", "100", "19.99", "Maglia-Rosa-01-D-B-Fronte.jpeg", "Maglia-Rosa-01-D-B-Retro.jpeg"),
+("1", "6", "2", "XL", "49", "19.99", "Maglia-Rosa-01-D-B-Fronte.jpeg", "Maglia-Rosa-01-D-B-Retro.jpeg"),
 ("1", "6", "3", "XS", "100", "19.99", "Maglia-Rosa-01-D-B-Fronte.jpeg", "Maglia-Rosa-01-D-B-Retro.jpeg"),
 ("1", "6", "3", "S", "100", "19.99", "Maglia-Rosa-01-D-B-Fronte.jpeg", "Maglia-Rosa-01-D-B-Retro.jpeg"),
 ("1", "6", "3", "M", "100", "19.99", "Maglia-Rosa-01-D-B-Fronte.jpeg", "Maglia-Rosa-01-D-B-Retro.jpeg"),
@@ -298,7 +298,7 @@ INSERT INTO maglia (idModello, idColore, idGenere, taglia, dispMagazzino, prezzo
 
 ("1", "7", "1", "XS", "100", "19.99", "Maglia-Rosso-01-U-B-Fronte.jpeg", "Maglia-Rosso-01-U-B-Retro.jpeg"),
 ("1", "7", "1", "S", "100", "19.99", "Maglia-Rosso-01-U-B-Fronte.jpeg", "Maglia-Rosso-01-U-B-Retro.jpeg"),
-("1", "7", "1", "M", "100", "19.99", "Maglia-Rosso-01-U-B-Fronte.jpeg", "Maglia-Rosso-01-U-B-Retro.jpeg"),
+("1", "7", "1", "M", "43", "19.99", "Maglia-Rosso-01-U-B-Fronte.jpeg", "Maglia-Rosso-01-U-B-Retro.jpeg"),
 ("1", "7", "1", "L", "100", "19.99", "Maglia-Rosso-01-U-B-Fronte.jpeg", "Maglia-Rosso-01-U-B-Retro.jpeg"),
 ("1", "7", "1", "XL", "100", "19.99", "Maglia-Rosso-01-U-B-Fronte.jpeg", "Maglia-Rosso-01-U-B-Retro.jpeg"),
 ("1", "7", "3", "XS", "100", "19.99", "Maglia-Rosso-01-U-B-Fronte.jpeg", "Maglia-Rosso-01-U-B-Retro.jpeg"),
@@ -337,7 +337,7 @@ INSERT INTO maglia (idModello, idColore, idGenere, taglia, dispMagazzino, prezzo
 ("4", "7", "3", "XS", "100", "29.99", "Maglia-Rosso-04-U-B-Fronte.jpeg", "Maglia-Rosso-04-U-B-Retro.jpeg"),
 ("4", "7", "3", "S", "100", "29.99", "Maglia-Rosso-04-U-B-Fronte.jpeg", "Maglia-Rosso-04-U-B-Retro.jpeg"),
 ("4", "7", "3", "M", "100", "29.99", "Maglia-Rosso-04-U-B-Fronte.jpeg", "Maglia-Rosso-04-U-B-Retro.jpeg"),
-("4", "7", "3", "L", "100", "29.99", "Maglia-Rosso-04-U-B-Fronte.jpeg", "Maglia-Rosso-04-U-B-Retro.jpeg"),
+("4", "7", "3", "L", "24", "29.99", "Maglia-Rosso-04-U-B-Fronte.jpeg", "Maglia-Rosso-04-U-B-Retro.jpeg"),
 ("4", "7", "3", "XL", "100", "29.99", "Maglia-Rosso-04-U-B-Fronte.jpeg", "Maglia-Rosso-04-U-B-Retro.jpeg"),
 
 ("1", "8", "2", "XS", "100", "19.99", "Maglia-Viola-01-D-Fronte.jpeg", "Maglia-Viola-01-D-Retro.jpeg"),
@@ -365,11 +365,11 @@ INSERT INTO maglia (idModello, idColore, idGenere, taglia, dispMagazzino, prezzo
 ("4", "8", "2", "XL", "100", "29.99", "Maglia-Viola-04-D-Fronte.jpeg", "Maglia-Viola-04-D-Retro.jpeg");
 
 INSERT INTO ordine(idOrdine, email, dataPagamento, stato, totale) VALUES
-("1", "lorenzo.zanetti33@gmail.com", "2022-02-08 10:30:12", "consegnato", 63.97),
-("2", "lorenzo.zanetti33@gmail.com", "2022-01-30 20:12:09", "consegnato", 107.97),
-("3", "lorenzo.zanetti33@gmail.com", "2021-12-24 12:00:00", "consegnato", 69.97), 
-("4", "pinco.pallino@gmail.com", "2022-01-25 12:56:25", "consegnato", 497.81),
-("5", "pinco.pallino@gmail.com", "2021-09-30 21:00:56", "consegnato", 29.99);
+("1", "lorenzo.zanetti33@gmail.com", "2022-02-08 10:30:12", "Consegnato", 63.97),
+("2", "lorenzo.zanetti33@gmail.com", "2022-01-30 20:12:09", "Consegnato", 107.97),
+("3", "lorenzo.zanetti33@gmail.com", "2021-12-24 12:00:00", "Consegnato", 69.97), 
+("4", "pinco.pallino@gmail.com", "2022-01-25 12:56:25", "Consegnato", 497.81),
+("5", "pinco.pallino@gmail.com", "2021-09-30 21:00:56", "Consegnato", 29.99);
 
 INSERT INTO maglia_ordinata(idMaglia, idOrdine, quantità, nomePersonalizzato, numeroPersonalizzato, costo) VALUES
 ("41", "1", "2", NULL, NULL, 39.98),
@@ -381,3 +381,7 @@ INSERT INTO maglia_ordinata(idMaglia, idOrdine, quantità, nomePersonalizzato, n
 ("81", "4", "18", NULL, NULL, 467.82),
 ("241", "4", "1", "pinco pallo", "10", 29.99),
 ("241", "5", "1", "pinco pallo", "10", 29.99);
+
+UPDATE maglia SET vendite = '10' WHERE idMaglia = 134;
+UPDATE maglia SET vendite = '10' WHERE idMaglia = 169;
+UPDATE maglia SET vendite = '10' WHERE idMaglia = 298;

@@ -33,7 +33,7 @@ if(isset($_POST["invioLogin"])){
             }
         }
     } else {
-        $templateParams["messaggio"] = "email o password non inserite!";
+        $templateParams["messaggio"] = "Email o password non inserite!";
     }
 }
 
@@ -41,7 +41,7 @@ if(isset($_POST["invioLogin"])){
 if(!empty($_SESSION["email"])){
     if($_SESSION["admin"]){
         //pagina Admin
-        $templateParams["titolo"] = "Kits - Gestione";
+        $templateParams["titolo"] = "UniShirts - Gestione";
         $templateParams["nome"] = "amministratore.php";
         //amministratore template
         $templateParams["ordini"] = $dbh->getLatestOrders(5);
@@ -59,7 +59,7 @@ if(!empty($_SESSION["email"])){
         }
     } else {
         //pagina utente
-        $templateParams["titolo"] = "Kits - Utente";
+        $templateParams["titolo"] = "UniShirts - Utente";
         $templateParams["nome"] = "utente.php";
         //utente template
         $templateParams["ordini"] = $dbh->getOrdersOfUser($_SESSION["email"]);

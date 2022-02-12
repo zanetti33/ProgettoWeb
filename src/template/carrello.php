@@ -11,9 +11,9 @@
                         <tr>
                             <th id="maglia">Maglia</th>
                             <th id="taglia">Taglia</th>
-                            <th id="scritta">Scritta</th>
-                            <th id="numero">Numero</th>
-                            <th id="quantità">Quantità</th>
+                            <th id="scritta">Nome</th>
+                            <th id="numero">Num.</th>
+                            <th id="quantità">Q.tà</th>
                             <th id="costo">Costo</th>
                             <th id="azione">Azione</th>
                         </tr>
@@ -60,6 +60,7 @@
                     <p><?php echo $templateParams["messaggio"]; ?></p>
                 <?php endif; ?>
                 <form method="POST">
+                    <p>La consegna di ogni ordine viene effettuata all'indirizzo del Campus universitario di Cesena: Via Cesare Pavese, 50, 47521 Cesena FC</p>
                     <fieldset>Dati carta di credito
                     <ul>
                         <li>
@@ -83,7 +84,7 @@
                             <input required type="month" id="scadenzaCarta" name="scadenzaCarta" />
                         </li>
                         <li>
-                            <input type="submit" name="acquista" value="acquista" />
+                            <input type="submit" name="acquista" value="Acquista" />
                         </li>
                     </ul>
                     </fieldset>

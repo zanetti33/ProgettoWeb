@@ -10,9 +10,9 @@ if(empty($_SESSION["email"]) ||
 
 $result = $dbh->removeFromCart($_GET["idRiga"]);
 if($result==1){
-    $msg = "prodotto rimosso dal carrello correttamente";
+    $msg = "Prodotto rimosso dal carrello correttamente";
 } else {
-    $msg = "errore nella rimozione dal db!";
+    $msg = "Errore nella rimozione dal db!";
 }
 
 header("location: carrello.php?msg=".$msg);

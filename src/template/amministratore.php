@@ -16,7 +16,7 @@
                                 <input required type="number" id="quantità" name="quantità" />
                             </li>
                             <li>
-                                <input type="submit" name="aggiungi" value="aggiungi" />
+                                <input type="submit" name="aggiungi" value="Aggiungi" />
                             </li>
                         </ul>
                     </form>

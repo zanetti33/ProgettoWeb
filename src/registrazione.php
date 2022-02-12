@@ -16,7 +16,7 @@ if(isset($_POST["invioRegistrazione"])){
         $_SESSION["admin"] = 0;
     }else{
         //errore nell'inserimento nel db
-        $templateParams["messaggio"] = "si è verificato un errore nell'inserimento nel database";
+        $templateParams["messaggio"] = "Si è verificato un errore nell'inserimento nel database";
     }
 }
 

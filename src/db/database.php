@@ -348,6 +348,7 @@ class DatabaseHelper{
         $stmt = $this->db->prepare($query);
         $stmt->bind_param('s', $email);
         $stmt->execute();
+
         if(!($stmt->affected_rows>0)){
             return true;
         }

@@ -76,6 +76,7 @@ if(isset($_POST["aggiungi"])){
                 } else {
                     $_SESSION["cart"] = array($nuovaRiga);
                 }
+                header("location: login.php");
             }
         }
     }
