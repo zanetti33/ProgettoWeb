@@ -20,6 +20,17 @@ if(isset($_POST["invioLogin"])){
             $_SESSION["email"] = $login_result[0]["email"];
             $_SESSION["password"] = $login_result[0]["password"];
             $_SESSION["admin"] = $login_result[0]["admin"];
+            //Nel caso ci siano valori nel carrello da salvare
+            if(isset($_SESSION["cart"]) && !$_SESSION["admin"]){
+                foreach($_SESSION["cart"] as $riga){
+                    $dbh->addToCart($riga["idMaglia"],
+                        $_SESSION["email"],
+                        $riga["quantità"],
+                        $riga["nome"],
+                        $riga["numero"],
+                        $riga["costo"]);
+                }
+            }
         }
     } else {
         $templateParams["messaggio"] = "email o password non inserite!";

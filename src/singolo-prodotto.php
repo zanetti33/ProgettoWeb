@@ -60,8 +60,22 @@ if(isset($_POST["aggiungi"])){
 
             $costoUnitario = $dbh->getProductById($idMaglia)[0]["prezzo"];
             $costo = $quantità * ($costoUnitario + $aggiunte);
-
-            $dbh->addToCart($idMaglia, $_SESSION["email"], $quantità, $nome, $numero, $costo);
+            
+            if(isset($_SESSION["email"])){
+                $dbh->addToCart($idMaglia, $_SESSION["email"], $quantità, $nome, $numero, $costo);
+            } else {
+                //se non è loggato ci salviamo i valori in una variabile di session
+                $nuovaRiga = array("idMaglia"=>$idMaglia,
+                    "quantità"=>$quantità,
+                    "nome"=>$nome,
+                    "numero"=>$numero,
+                    "costo"=>$costo);
+                if(isset($_SESSION["cart"])){
+                    array_push($_SESSION["cart"], $nuovaRiga);
+                } else {
+                    $_SESSION["cart"] = array($nuovaRiga);
+                }
+            }
         }
     }
 }
