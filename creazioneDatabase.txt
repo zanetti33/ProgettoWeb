@@ -52,13 +52,13 @@ CREATE TABLE Ordine(
 );
 
 CREATE TABLE Maglia_in_carrello(
+    idRiga int PRIMARY KEY AUTO_INCREMENT,
     idMaglia int NOT NULL,
     email varchar(50) NOT NULL,
     quantità int NOT NULL,
     nomePersonalizzato varchar(20),
     numeroPersonalizzato int(2),
     costo float(7,2) NOT NULL,
-    PRIMARY KEY (idMaglia, email),
     FOREIGN KEY (idMaglia) REFERENCES Maglia(idMaglia),
     FOREIGN KEY (email) REFERENCES Account(email)
 );

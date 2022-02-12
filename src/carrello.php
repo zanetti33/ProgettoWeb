@@ -52,6 +52,9 @@ $templateParams["titolo"] = "Kits - Carrello";
 $templateParams["nome"] = "carrello.php";
 //Home Template
 $templateParams["maglie"] = $dbh->getProductsInCart($_SESSION["email"]);
+if(isset($_GET["msg"])){
+    $templateParams["messaggioCarrello"] = $_GET["msg"];
+}
 
 require 'template/base.php';
 ?>

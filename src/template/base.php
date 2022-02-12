@@ -5,8 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title><?php echo $templateParams["titolo"]; ?></title>
     <link rel="stylesheet" type="text/css" href="./css/style.css" />
-    <?php
-    if(isset($templateParams["nome"]) && $templateParams["nome"] == "lista-prodotti.php"): ?>
+    <?php if(isset($templateParams["nome"]) && $templateParams["nome"] == "lista-prodotti.php"): ?>
 		<link rel="stylesheet" type="text/css" href="./css/list-style.css" />
     <?php endif; ?>
     <?php

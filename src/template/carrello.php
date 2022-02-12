@@ -1,5 +1,8 @@
 			<section>
                 <h2>Riepilogo ordine</h2>
+                <?php if(isset($templateParams["messaggioCarrello"])): ?>
+                    <p><?php echo $templateParams["messaggioCarrello"]; ?></p>
+                <?php endif; ?>
                 <?php if(count($templateParams["maglie"]) == 0): ?>
                     <h3> Il tuo carrello è vuoto </h3>
                 <?php else: ?>
@@ -12,6 +15,7 @@
                             <th id="numero">Numero</th>
                             <th id="quantità">Quantità</th>
                             <th id="costo">Costo</th>
+                            <th id="azione">Azione</th>
                         </tr>
                     </thead>
                     <tbody>
@@ -37,11 +41,14 @@
                             <td header="costo">
                                 <?php echo $maglia["costo"]; ?>
                             </td>
+                            <td>
+                                <a href="rimozione-carrello.php?idRiga=<?php echo $maglia["idRiga"]; ?>">rimuovi</a>
+                            </td>
                         </tr>
                         <?php endforeach; ?>
                         <tr>
                             <th id="totale">Totale:</th>
-                            <td colspan=5 header="totale"><?php echo totalCart($templateParams["maglie"]) ?></td>
+                            <td colspan=6 header="totale"><?php echo totalCart($templateParams["maglie"]) ?></td>
                         </tr>
                     </tbody>
                     </table>

@@ -105,7 +105,7 @@ class DatabaseHelper{
     }
 
     public function getProductsInCart($email){
-        $stmt = $this->db->prepare("SELECT maglia.idMaglia, quantità, nomePersonalizzato, numeroPersonalizzato, costo, immagineFronte, taglia
+        $stmt = $this->db->prepare("SELECT idRiga, maglia.idMaglia, quantità, nomePersonalizzato, numeroPersonalizzato, costo, immagineFronte, taglia
             FROM maglia_in_carrello, maglia WHERE maglia.idMaglia = maglia_in_carrello.idMaglia AND email=?");
         $stmt->bind_param("s", $email);
         $stmt->execute();
@@ -306,6 +306,15 @@ class DatabaseHelper{
             return true;
         }
         return false;
+    }
+
+    public function removeFromCart($idRiga){
+        $query = "DELETE FROM maglia_in_carrello WHERE idRiga = ?";
+        $stmt = $this->db->prepare($query);
+        $stmt->bind_param('i', $idRiga);
+        $stmt->execute();
+
+        return $stmt->affected_rows;
     }
 }
 ?>
