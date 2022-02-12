@@ -15,14 +15,15 @@
                     <label for="taglia">Seleziona un'altra taglia:</label>
                     <form method="POST">
                         <ul>
-                            <?php foreach($templateParams["taglie"] as $taglia): ?>
-                                <?php if($taglia["taglia"] != $maglia["taglia"]): ?>
-                                    <li>
-                                        <label><?php echo $taglia["taglia"]?></label>
-                                        <input type="radio" name="taglia" value="<?php echo $taglia["taglia"]?>"/>
-                                    </li>
-                                <?php endif; ?>
-                            <?php endforeach; ?>
+                            <li>
+                            <select name="taglia">
+                                <?php foreach($templateParams["taglie"] as $taglia): ?>
+                                    <?php if($taglia["taglia"] != $maglia["taglia"]): ?>
+                                        <option value="<?php echo $taglia["taglia"]?>"><?php echo $taglia["taglia"]?></option>
+                                    <?php endif; ?>
+                                <?php endforeach; ?>
+                            </select>
+                            </li>
                             <li>
                                 <input type="submit" name="cambioTaglia" value="Cambia taglia"/>
                             </li>
@@ -36,14 +37,15 @@
                     <label for="colore">Seleziona un altro colore disponibile per lo stesso modello:</label>
                     <form method="POST">
                         <ul>
-                            <?php foreach($templateParams["colori"] as $colore): ?>
-                                <?php if($colore["idColore"] != $maglia["idColore"]): ?>
-                                    <li>
-                                        <label><?php echo $colore["nome"]?></label>
-                                        <input type="radio" name="colore" value="<?php echo $colore["idColore"]?>"/>
-                                    </li>
-                                <?php endif; ?>
-                            <?php endforeach; ?>
+                            <li>
+                            <select name="colore">
+                                <?php foreach($templateParams["colori"] as $colore): ?>
+                                    <?php if($colore["idColore"] != $maglia["idColore"]): ?>
+                                        <option value="<?php echo $colore["idColore"]?>"><?php echo $colore["nome"]?></option>
+                                    <?php endif; ?>
+                                <?php endforeach; ?>
+                            </select>
+                            </li>
                             <li>
                                 <input type="submit" name="cambioColore" value="Cambia colore"/>
                             </li>
