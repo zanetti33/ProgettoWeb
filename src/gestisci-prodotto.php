@@ -20,7 +20,7 @@ if($_GET["action"]!=1){
 }
 
 
-$templateParams["titolo"] = "Kits - Gestisci prodotto";
+$templateParams["titolo"] = "UniShirts - Gestisci prodotto";
 $templateParams["nome"] = "gestione-maglia.php";
 
 $templateParams["azione"] = $_GET["action"];

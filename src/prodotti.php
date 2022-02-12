@@ -3,7 +3,7 @@ require_once 'bootstrap.php';
 require_once 'utils/functions.php';
 
 //Base Template
-$templateParams["titolo"] = "Kits";
+$templateParams["titolo"] = "UniShirts - Prodotti";
 $templateParams["nome"] = "lista-prodotti.php";
 $templateParams["colori"] = $dbh->getColors();
 $templateParams["generi"] = $dbh->getGenders();

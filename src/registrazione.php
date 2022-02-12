@@ -24,7 +24,7 @@ if(isset($_POST["invioRegistrazione"])){
 if(!empty($_SESSION["email"])){
     header("location: index.php");
 } else {
-    $templateParams["titolo"] = "Blog TW - Registrazione";
+    $templateParams["titolo"] = "UniShirts - Registrazione";
     $templateParams["nome"] = "registrazione.php";
 }
 

@@ -66,7 +66,7 @@ if(!empty($_SESSION["email"])){
     }
 }
 else{
-    $templateParams["titolo"] = "Kits - Login";
+    $templateParams["titolo"] = "UniShirts - Login";
     $templateParams["nome"] = "login.php";
 }
 

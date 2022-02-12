@@ -8,7 +8,7 @@ if(empty($_SESSION["email"]) ||
 }
 
 //Base Template
-$templateParams["titolo"] = "Kits - Carrello";
+$templateParams["titolo"] = "UniShirts - Carrello";
 $templateParams["nome"] = "carrello.php";
 //Home Template
 $templateParams["maglie"] = $dbh->getProductsInCart($_SESSION["email"]);

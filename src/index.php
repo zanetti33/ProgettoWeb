@@ -2,7 +2,7 @@
 require_once 'bootstrap.php';
 
 //Base Template
-$templateParams["titolo"] = "Kits - Home";
+$templateParams["titolo"] = "UniShirts - Home";
 $templateParams["nome"] = "home.php";
 //Home Template
 $templateParams["generi"] = $dbh->getGenders();
