@@ -33,10 +33,8 @@
                                 <input type="submit" name="cambioTaglia" value="Cambia taglia"/>
                             </li>
                         </ul>
-                    </form>
+                        </form>
                     </li>
-                </ul>
-                <ul>
                     <li>
                         <p>Colore: <?php echo $maglia["colore"]?></p>
                     </li>
@@ -56,37 +54,37 @@
                                 <input type="submit" name="cambioColore" value="Cambia colore"/>
                             </li>
                         </ul>
+                        </form>
+                    </li>
+                    <li>
+                        <form method="POST">
+                        <ul>
+                            <li>
+                                <label for="quantity">Quantità:</label>
+                                <input required type="number" name="quantità" min="1" max="<?php echo $maglia["dispMagazzino"]?>"/>
+                                <p>(ne sono rimaste solo <?php echo $maglia["dispMagazzino"]?>)</p>
+                            </li>
+                            <li>
+                                <label for="name">Nome(+5€):</label>
+                                <input type="name" id="nomePersonalizzato" name="nomePersonalizzato"/>
+                            </li>
+                            <li>
+                                <label for="number">Numero(+5€):</label>
+                                <input type="number" name="numeroPersonalizzato" min="1" max="99"/>
+                            </li>
+                            <li>
+                                <?php if($maglia["dispMagazzino"] <= 0): ?>
+                                    <p>In questo momento la maglia non è disponibile!</p>
+                                    <input type="submit" name="aggiungi" value="Aggiungi al carrello" disabled/>
+                                <?php else: ?>
+                                    <input type="submit" name="aggiungi" value="Aggiungi al carrello"/>
+                                <?php endif; ?>
+                            </li>
+                        </ul>
                     </form>
                     </li>
                 </ul>
-                    <form method="POST">
-                        <ul>
-                        <li>
-                            <label for="quantity">Quantità:</label>
-                            <input required type="number" name="quantità" min="1" max="<?php echo $maglia["dispMagazzino"]?>"/>
-                            <p>(ne sono rimaste solo <?php echo $maglia["dispMagazzino"]?>)</p>
-                        </li>
-                        <li>
-                            <label for="name">Nome(+5€):</label>
-                            <input type="name" id="nomePersonalizzato" name="nomePersonalizzato"/>
-                        </li>
-                        <li>
-                            <label for="number">Numero(+5€):</label>
-                            <input type="number" name="numeroPersonalizzato" min="1" max="99"/>
-                        </li>
-                        <li>
-                            <?php if($maglia["dispMagazzino"] <= 0): ?>
-                                <p>In questo momento la maglia non è disponibile!</p>
-                                <input type="submit" name="aggiungi" value="Aggiungi al carrello" disabled/>
-                            <?php else: ?>
-                                <input type="submit" name="aggiungi" value="Aggiungi al carrello"/>
-                            <?php endif; ?>
-                        </li>
-                        </ul>
-                    </form>
-                    
-                    </fieldset>
-                
+            </fieldset>
             </section>
             <section>
                 <h2>Descrizione prodotto:</h2>
