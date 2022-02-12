@@ -63,7 +63,7 @@
                         <ul>
                         <li>
                             <label for="quantity">Quantità:</label>
-                            <input required type="quantity" name="quantità" min="1" max="<?php echo $maglia["dispMagazzino"]?>"/>
+                            <input required type="number" name="quantità" min="1" max="<?php echo $maglia["dispMagazzino"]?>"/>
                             <p>(ne sono rimaste solo <?php echo $maglia["dispMagazzino"]?>)</p>
                         </li>
                         <li>
