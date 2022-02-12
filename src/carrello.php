@@ -7,6 +7,15 @@ if(empty($_SESSION["email"]) ||
     header("location: login.php");
 }
 
+//Base Template
+$templateParams["titolo"] = "Kits - Carrello";
+$templateParams["nome"] = "carrello.php";
+//Home Template
+$templateParams["maglie"] = $dbh->getProductsInCart($_SESSION["email"]);
+if(isset($_GET["msg"])){
+    $templateParams["messaggioCarrello"] = $_GET["msg"];
+}
+
 if(isset($_POST["acquista"])){
     //eventuali controlli sui valori
 
@@ -45,15 +54,6 @@ if(isset($_POST["acquista"])){
         }
     }
     $templateParams["messaggio"] = $msg;
-}
-
-//Base Template
-$templateParams["titolo"] = "Kits - Carrello";
-$templateParams["nome"] = "carrello.php";
-//Home Template
-$templateParams["maglie"] = $dbh->getProductsInCart($_SESSION["email"]);
-if(isset($_GET["msg"])){
-    $templateParams["messaggioCarrello"] = $_GET["msg"];
 }
 
 require 'template/base.php';

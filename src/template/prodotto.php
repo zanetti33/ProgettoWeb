@@ -13,7 +13,6 @@
                     </li>
                     <li>
                         <label for="taglia">Seleziona un'altra taglia:</label>
-                        <?php /* NON FUNZIONAAAAAAAAAA */ ?>
                         <form action="" method="POST">
                         <ul>
                             <?php foreach($templateParams["taglie"] as $taglia): ?>
@@ -29,10 +28,32 @@
                             </li>
                         </ul>
                     </form>
-                    <?php/* ANDREBBE FATTA LA STESSA COSA ANCHE CON I COLORI */?>
                     </li>
                 </ul>
-                    <form>
+                <ul>
+                    <li>
+                        <p>Colore: <?php echo $maglia["colore"]?></p>
+                    </li>
+                    <li>
+                        <label for="colore">Seleziona un altro colore disponibile per lo stesso modello:</label>
+                        <form action="" method="POST">
+                        <ul>
+                            <?php foreach($templateParams["colori"] as $colore): ?>
+                                <?php if($colore["idColore"] != $maglia["idColore"]): ?>
+                                    <li>
+                                        <label><?php echo $colore["nome"]?></label>
+                                        <input type="radio" name="colore" value="<?php echo $colore["idColore"]?>"/>
+                                    </li>
+                                <?php endif; ?>
+                            <?php endforeach; ?>
+                            <li>
+                                <input type="submit" name="cambioColore" value="Cambia colore"/>
+                            </li>
+                        </ul>
+                    </form>
+                    </li>
+                </ul>
+                    <form method="POST">
                         <ul>
                         <li>
                             <label for="quantity">Quantità:</label>
@@ -50,13 +71,13 @@
                         <li>
                             <?php if($maglia["dispMagazzino"] <= 0): ?>
                                 <p>In questo momento la maglia non è disponibile!</p>
-                                <input type="submit" value="Aggiungi al carrello" disabled/>
+                                <input type="submit" name="aggiungi" value="Aggiungi al carrello" disabled/>
                             <?php else: ?>
-                                <input type="submit" value="Aggiungi al carrello"/>
+                                <input type="submit" name="aggiungi" value="Aggiungi al carrello"/>
                             <?php endif; ?>
                         </li>
                         </ul>
-                        </form>
+                    </form>
                     
                     </fieldset>
                 
@@ -65,11 +86,9 @@
                 <h2>Descrizione prodotto:</h2>
                 <article>
                     <h3><?php echo $maglia["modello"]?></h3>
-                    <br><?php echo $maglia["descrizione"]?>
-                    <br><?php echo $maglia["genere"]?>
-                    <br><?php echo $maglia["colore"]?>
-                    <br><?php echo $maglia["prezzo"]?>€
-                    <br><br>
+                    <p><?php echo $maglia["genere"]?> - <?php echo $maglia["colore"]?></p>
+                    <p><?php echo $maglia["descrizione"]?></p>
+                    <p>Prezzo: <?php echo $maglia["prezzo"]?>€</p>
                 </article>
                 <table>
                     <caption>Guida alle taglie (cm):</caption>

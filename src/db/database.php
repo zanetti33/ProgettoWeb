@@ -126,9 +126,18 @@ class DatabaseHelper{
         return $result->fetch_all(MYSQLI_ASSOC);
     }
 
-    public function getProductBySize($genere, $colore, $modello, $taglia) {
-        $stmt = $this->db->prepare("SELECT idMaglia FROM maglia WHERE idGenere = ? AND idColore = ? AND idModello = ? AND taglia = ?");
-        $stmt->bind_param("iiii", $genere, $colore, $modello, $taglia);
+    public function getProductBySize($genere, $colore, $modello, $taglia){
+        $stmt = $this->db->prepare("SELECT idMaglia FROM maglia WHERE taglia = ? AND idGenere = ? AND idColore = ? AND idModello = ?");
+        $stmt->bind_param("siii", $taglia, $genere, $colore, $modello);
+        $stmt->execute();
+        $result = $stmt->get_result();
+
+        return $result->fetch_all(MYSQLI_ASSOC);
+    }
+
+    public function getColorsByModel($modello, $genere, $taglia){
+        $stmt = $this->db->prepare("SELECT maglia.idColore, colore.nome FROM maglia, colore WHERE maglia.idColore = colore.idColore AND taglia = ? AND idGenere = ? AND idModello = ? GROUP BY idColore");
+        $stmt->bind_param("sii", $taglia, $genere, $modello);
         $stmt->execute();
         $result = $stmt->get_result();
 
@@ -306,6 +315,15 @@ class DatabaseHelper{
             return true;
         }
         return false;
+    }
+
+    public function addToCart($idMaglia, $email, $quantità, $nome, $numero, $costo) {
+        $query = "INSERT INTO maglia_in_carrello (idMaglia, email, quantità, nomePersonalizzato, numeroPersonalizzato, costo) VALUES (?, ?, ?, ?, ?, ?)";
+        $stmt = $this->db->prepare($query);
+        $stmt->bind_param('isisid', $idMaglia, $email, $quantità, $nome, $numero, $costo);
+        $stmt->execute();
+
+        return $stmt->insert_id;
     }
 
     public function removeFromCart($idRiga){
